@@ -3,11 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Event from "./components/Event";
 import Comment from "./components/Comment";
+import Categories from './components/Categories';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Event
+      {/* <Event
         image="https://olympus-imaging.com.au/content/000107507.jpg"
         title="Event title"
         organiser="susansmith" // unique username
@@ -23,7 +24,8 @@ export default function App() {
         posterImg="https://thebluegrasssituation.com/wp-content/uploads/2020/08/re-perez-branding-for-the-people-square-headshot.jpg"
         rating={2}
         comment="tincidunt rutrum. Fusce imperdiet pellentesque augue, faucibus commodo sem consequat sit amet.agna, acnar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptipsum d"
-      />
+      /> */}
+      {/* <Categories /> */}
       <StatusBar style="auto" />
     </View>
   );
