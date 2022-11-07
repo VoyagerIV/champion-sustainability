@@ -30,7 +30,7 @@ const Event = ({ image, title, organiser, date, time, location, categories }) =>
             uri: `${image}`,
           }}
         />
-        <View>
+        <View style={styles.infoBox}>
           <Text style={styles.title}>{title}</Text>
           <Text style={[styles.text, styles.organiserText]}>{organiser}</Text>
           <Text style={styles.text}>
@@ -55,21 +55,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 10,
     paddingVertical: 15,
-    
   },
   image: {
+    flex: 1,
     width: 135,
     height: 135,
     marginRight: 15,
   },
+  infoBox: {
+    flex: 2,
+  },
   text: {
     fontSize: "16px",
     marginBottom: 6,
+    flexShrink: 1,
+    flexWrap: "wrap",
   },
   title: {
     fontSize: "20px",
     fontWeight: "500",
     marginBottom: 7,
+    flexShrink: 1,
+    flexWrap: "wrap",
   },
   organiserText: {
     color: "#2F4F4F",
@@ -78,6 +85,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     display: "flex",
     flexDirection: "row",
+    flexWrap: "wrap",
   },
   tagContainer: {
     borderWidth: 1,
@@ -89,12 +97,12 @@ const styles = StyleSheet.create({
     borderColor: "#2F4F4F",
     paddingVertical: 4,
     paddingHorizontal: 15,
-    marginRight: 5
+    marginRight: 5,
   },
   tagText: {
     fontSize: "13px",
     color: "#2F4F4F",
-  }
+  },
 });
 
 export default Event;

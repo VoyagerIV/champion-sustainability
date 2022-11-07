@@ -24,7 +24,5 @@ const styles = StyleSheet.create({
   ratingContainer: {
     display: "flex",
     flexDirection: "row",
-    borderWidth: 1,
-    borderColor: "red",
   },
 });
