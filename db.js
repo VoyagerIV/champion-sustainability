@@ -22,6 +22,8 @@ export let events = [
     time: "Event time",
     location: "Event location",
     description: "Event description",
+    image: "Image url",
+    categories: ["category1", "category2"],
     comments: [
       {
         poster: "johnsmith",
