@@ -3,8 +3,6 @@ import {
   View,
   Text,
   Image,
-  ScrollView,
-  TextInput,
   Pressable,
 } from "react-native";
 
@@ -19,16 +17,18 @@ const Event = ({ image, title, organiser, date, time, location, categories }) =>
       <Pressable
         style={({ pressed }) => [
           {
-            backgroundColor: pressed ? "rgba(0, 0, 0, 0.03)" : "rgba(0, 0, 0, 0)",
+            backgroundColor: pressed
+              ? "rgba(0, 0, 0, 0.03)"
+              : "rgba(0, 0, 0, 0)",
           },
           styles.container,
         ]}
       >
         <Image
+          style={styles.image}
           source={{
             uri: `${image}`,
           }}
-          style={styles.image}
         />
         <View>
           <Text style={styles.title}>{title}</Text>

@@ -27,7 +27,9 @@ export let events = [
     comments: [
       {
         poster: "johnsmith",
-        rating: 1, // rating out of 5, 0 for no rating?
+        posterImg:
+          "https://thebluegrasssituation.com/wp-content/uploads/2020/08/re-perez-branding-for-the-people-square-headshot.jpg",
+        rating: 5, // rating out of 5, 0 for no rating?
         comment: "Comment text",
       },
     ],
