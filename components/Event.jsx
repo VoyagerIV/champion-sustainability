@@ -22,6 +22,7 @@ const Event = ({ title, organiser, date, location }) => {
           <Text style={styles.text}>{location}</Text>
           <View style={styles.tagsRow}>
             <CategoryTag category="Category" />
+            <CategoryTag category="Category2" />
           </View>
         </View>
       </View>
