@@ -1,4 +1,12 @@
-import { StyleSheet, View, Text, Image, ScrollView, TextInput } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TextInput,
+  Pressable,
+} from "react-native";
 
 const CategoryTag = ({ category }) => {
     return <View style={styles.tagContainer}>
@@ -8,7 +16,14 @@ const CategoryTag = ({ category }) => {
 
 const Event = ({ image, title, organiser, date, time, location, categories }) => {
     return (
-      <View style={styles.container}>
+      <Pressable
+        style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? "rgba(0, 0, 0, 0.03)" : "rgba(0, 0, 0, 0)",
+          },
+          styles.container,
+        ]}
+      >
         <Image
           source={{
             uri: `${image}`,
@@ -18,15 +33,17 @@ const Event = ({ image, title, organiser, date, time, location, categories }) =>
         <View>
           <Text style={styles.title}>{title}</Text>
           <Text style={[styles.text, styles.organiserText]}>{organiser}</Text>
-          <Text style={styles.text}>{date} · {time}</Text>
+          <Text style={styles.text}>
+            {date} · {time}
+          </Text>
           <Text style={styles.text}>{location}</Text>
           <View style={styles.tagsRow}>
-            {categories.map((item) => {
-              return <CategoryTag category={`${item}`} />;
+            {categories.map((item, indx) => {
+              return <CategoryTag key={indx} category={`${item}`} />;
             })}
           </View>
         </View>
-      </View>
+      </Pressable>
     );
 }
 
@@ -38,6 +55,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 10,
     paddingVertical: 15,
+    
   },
   image: {
     width: 135,
