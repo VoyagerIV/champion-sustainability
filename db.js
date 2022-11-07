@@ -16,13 +16,13 @@ export let users = [
 export let events = [
   {
     id: 1,
+    image: "Image url",
     title: "Event title",
     organiser: "susamsmith", // unique username
     date: "Event date",
     time: "Event time",
     location: "Event location",
     description: "Event description",
-    image: "Image url",
     categories: ["category1", "category2"],
     comments: [
       {

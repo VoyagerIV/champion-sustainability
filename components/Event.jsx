@@ -6,23 +6,24 @@ const CategoryTag = ({ category }) => {
     </View>
 }
 
-const Event = ({ title, organiser, date, location }) => {
+const Event = ({ image, title, organiser, date, time, location, categories }) => {
     return (
       <View style={styles.container}>
         <Image
           source={{
-            uri: "https://olympus-imaging.com.au/content/000107507.jpg",
+            uri: `${image}`,
           }}
           style={styles.image}
         />
         <View>
           <Text style={styles.title}>{title}</Text>
           <Text style={[styles.text, styles.organiserText]}>{organiser}</Text>
-          <Text style={styles.text}>{date}</Text>
+          <Text style={styles.text}>{date} · {time}</Text>
           <Text style={styles.text}>{location}</Text>
           <View style={styles.tagsRow}>
-            <CategoryTag category="Category" />
-            <CategoryTag category="Category2" />
+            {categories.map((item) => {
+              return <CategoryTag category={`${item}`} />;
+            })}
           </View>
         </View>
       </View>
@@ -57,6 +58,8 @@ const styles = StyleSheet.create({
   },
   tagsRow: {
     marginTop: 5,
+    display: "flex",
+    flexDirection: "row",
   },
   tagContainer: {
     borderWidth: 1,
@@ -68,6 +71,7 @@ const styles = StyleSheet.create({
     borderColor: "#2F4F4F",
     paddingVertical: 4,
     paddingHorizontal: 15,
+    marginRight: 5
   },
   tagText: {
     fontSize: "13px",

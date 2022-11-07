@@ -10,7 +10,10 @@ export default function App() {
         title="Event Title"
         organiser="Event host"
         date="Event date"
+        time="Event time"
         location="Event location"
+        image="https://olympus-imaging.com.au/content/000107507.jpg"
+        categories={["category1", "category2"]}
       />
       <StatusBar style="auto" />
     </View>
