@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import { FontAwesome } from "@expo/vector-icons";
 
 export const StarRatingStatic = ({ rating }) => {
   const selected = "#00CA90";
@@ -8,10 +8,11 @@ export const StarRatingStatic = ({ rating }) => {
     <View style={styles.ratingContainer}>
       {[...Array(5).keys()].map((indx) => {
         return (
-          <Icon
+          <FontAwesome
             key={indx}
+            style={styles.star}
             name="star"
-            size={24}
+            size={22}
             color={rating > indx ? selected : notSelected}
           />
         );
@@ -25,4 +26,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
   },
+  star: {
+    marginRight: 2
+  }
 });

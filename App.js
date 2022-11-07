@@ -16,6 +16,7 @@ export default function App() {
         location="Event location"
         description="Event description"
         categories={["category1", "category2"]}
+        status="attended" // one of { none, attending, attended }
       />
       <Comment
         poster="johnsmith"

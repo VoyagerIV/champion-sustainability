@@ -6,13 +6,15 @@ import {
   Pressable,
 } from "react-native";
 
+import { Feather } from "@expo/vector-icons"; 
+
 const CategoryTag = ({ category }) => {
     return <View style={styles.tagContainer}>
         <Text style={styles.tagText}>{category}</Text>
     </View>
 }
 
-const Event = ({ image, title, organiser, date, time, location, categories }) => {
+const Event = ({ image, title, organiser, date, time, location, categories, status }) => {
     return (
       <Pressable
         style={({ pressed }) => [
@@ -31,7 +33,15 @@ const Event = ({ image, title, organiser, date, time, location, categories }) =>
           }}
         />
         <View style={styles.infoBox}>
-          <Text style={styles.title}>{title}</Text>
+          <View style={styles.eventHeader}>
+            <Text style={styles.title}>{title}</Text>
+            {status == "attending" && (
+              <Feather name="clock" size={24} color="#FE881A" />
+            )}
+            {status == "attended" && (
+              <Feather name="check-circle" size={23} color="#00CA90" />
+            )}
+          </View>
           <Text style={[styles.text, styles.organiserText]}>{organiser}</Text>
           <Text style={styles.text}>
             {date} · {time}
@@ -64,6 +74,11 @@ const styles = StyleSheet.create({
   },
   infoBox: {
     flex: 2,
+  },
+  eventHeader: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   text: {
     fontSize: "16px",
