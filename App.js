@@ -5,7 +5,7 @@ import Event from "./components/Event";
 import Comment from "./components/Comment";
 import Categories from './components/Categories';
 import { StarRating } from './components/StarRating';
-import SearchBar from './components/SearchBar';
+import SearchBar from './SearchBar';
 
 export default function App() {
   return (
