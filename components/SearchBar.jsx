@@ -6,7 +6,7 @@ import { IconComponentProvider, Icon } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 const styles = StyleSheet.create({
-  SearchWindow: {
+  searchSearchWindow: {
     backgroundColor: "#DAF6E6",
     borderRadius: 20,
     padding: 10,
