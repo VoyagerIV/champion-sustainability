@@ -5,6 +5,7 @@ import Event from "./components/Event";
 import Comment from "./components/Comment";
 import Categories from './components/Categories';
 import { StarRating } from './components/StarRating';
+import SearchBar from './components/SearchBar';
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
       /> */}
       {/* <Categories /> */}
       {/* <StarRating /> */}
+      <SearchBar/>
       <StatusBar style="auto" />
     </View>
   );
