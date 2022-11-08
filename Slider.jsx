@@ -6,31 +6,44 @@ import { Flex } from '@react-native-material/core';
 
 const styles = StyleSheet.create({
   slider: {
-    width: "80%",
+    width: "100%",
     
   },
   container: {
+    flexDirection: "column",
+    width: "80%",
+    padding: 20
+    
+  },
+
+  text: {
     flexDirection: "row",
+    justifyContent: "space-between"
+  
   }
 })
 
-export default MySlider = (props) => {
+export default MySlider = ({message, start, end, step}) => {
     const [hookValue, setHookValue] = useState(0)
 
 
 
     return (<View style={styles.container}>
 
-      <Text>{hookValue}</Text>
+      <Text>{message}{hookValue}</Text>
       <Slider
       style={styles.slider}
-      minimumValue={0}
-      maximumValue={10}
-      step={1}
+      minimumValue={start}
+      maximumValue={end}
+      step={step}
       minimumTrackTintColor="#00CA90"
       maximumTrackTintColor="#000000"
       onValueChange={(value)=> setHookValue(value)}
       onSlidingComplete={(value)=> console.log(value)}
       />
+      <View style={{...styles.text, }}>
+        <Text style={{"paddingLeft" : 9}}>{start}</Text> 
+        <Text style={{"paddingRight" : 9}}> {end}</Text> 
+      </View>
     </View>)
 };

@@ -31,7 +31,7 @@ export default function App() {
       {/* <Categories /> */}
       {/* <StarRating /> */}
       {/* <SearchBar/> */}
-      <Slider />
+      <Slider message="Km from my location: " start={0} end={10} step={1}/>
       <StatusBar style="auto" />
     </View>
   );
