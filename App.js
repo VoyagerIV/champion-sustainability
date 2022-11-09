@@ -33,7 +33,7 @@ export default function App() {
       {/* <StarRating /> */}
       {/* <SB />
       <Slider message="Km from my location: " start={0} end={10} step={1}/> */}
-      <MyModal txt={"Insert message here"}/>
+      {/* <MyModal txt={"Insert message here"}/> */}
       <StatusBar style="auto" />
     </View>
   );
