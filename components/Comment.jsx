@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   image: {
     width: 55,
     height: 55,
-    borderRadius: "100%",
+    borderRadius: 100,
     alignSelf: "flex-start"
   },
   commentContainer: {

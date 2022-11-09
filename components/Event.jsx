@@ -81,13 +81,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   text: {
-    fontSize: "16px",
+    fontSize: 16,
     marginBottom: 6,
     flexShrink: 1,
     flexWrap: "wrap",
   },
   title: {
-    fontSize: "20px",
+    fontSize: 20,
     fontWeight: "500",
     marginBottom: 7,
     flexShrink: 1,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   tagText: {
-    fontSize: "13px",
+    fontSize: 13,
     color: "#2F4F4F",
   },
 });
