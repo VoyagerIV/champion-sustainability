@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export default MySlider = ({message, start, end, step}) => {
+const MySlider = ({message, start, end, step}) => {
     const [hookValue, setHookValue] = useState(0)
 
 
@@ -47,3 +47,5 @@ export default MySlider = ({message, start, end, step}) => {
       </View>
     </View>)
 };
+
+export default MySlider;

@@ -5,8 +5,8 @@ import Event from "./components/Event";
 import Comment from "./components/Comment";
 import Categories from './components/Categories';
 import { StarRating } from './components/StarRating';
-import SearchBar from './components/SearchBar';
-import Slider from './Slider';
+import SB from './components/SearchBar';
+import Slider from './components/Slider';
 
 export default function App() {
   return (
@@ -30,7 +30,7 @@ export default function App() {
       /> */}
       {/* <Categories /> */}
       {/* <StarRating /> */}
-      {/* <SearchBar/> */}
+      <SB />
       <Slider message="Km from my location: " start={0} end={10} step={1}/>
       <StatusBar style="auto" />
     </View>

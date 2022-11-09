@@ -6,7 +6,8 @@ import { IconComponentProvider, Icon } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 const styles = StyleSheet.create({
-  searchSearchWindow: {
+  
+  SearchWindow: {
     backgroundColor: "#DAF6E6",
     borderRadius: 20,
     padding: 10,
@@ -23,8 +24,8 @@ const SearchIcon = () => (
 );
 
 
-export default SearchBar = props => (
-  <Formik
+const SB = (props) => {
+  return <Formik
     initialValues={{ search: '' }}
     onSubmit={values => console.log(values)}
   >
@@ -44,4 +45,6 @@ export default SearchBar = props => (
       </View>
     )}
   </Formik>
-);
+};
+
+export default SB;
