@@ -7,6 +7,7 @@ import Categories from './components/Categories';
 import { StarRating } from './components/StarRating';
 import SB from './components/SearchBar';
 import Slider from './components/Slider';
+import MyModal from './components/Modal';
 
 export default function App() {
   return (
@@ -30,8 +31,9 @@ export default function App() {
       /> */}
       {/* <Categories /> */}
       {/* <StarRating /> */}
-      <SB />
-      <Slider message="Km from my location: " start={0} end={10} step={1}/>
+      {/* <SB />
+      <Slider message="Km from my location: " start={0} end={10} step={1}/> */}
+      <MyModal txt={"Insert message here"}/>
       <StatusBar style="auto" />
     </View>
   );
