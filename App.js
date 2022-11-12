@@ -34,15 +34,15 @@ export default function App() {
         comment="tincidunt rutrum. Fusce imperdiet pellentesque augue, faucibus commodo sem consequat sit amet.agna, acnar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptipsum d"
       /> */}
       {/* <Categories />  */}
-     {/* <StarRating /> */}
+      {/* <StarRating /> */}
       {/* <SB /> */}
       {/* <Slider message="Km from my location: " start={0} end={12} step={1}/>
       <MyModal txt={"Insert message here"}/> */}
-      
+
       {/* Screens */}
       {/* <Search /> */}
       {/* <SearchResults /> */}
-      <EventPage />
+      <EventPage image="https://assets.weforum.org/article/image/lllYzG60bDfxJ6CRQUI5FTjkqI7-acWR4vam2s901IU.jpg" />
       <StatusBar style="auto" />
     </View>
   );
