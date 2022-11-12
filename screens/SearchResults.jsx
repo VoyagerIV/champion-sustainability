@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 
 import Event from "../components/Event";
 
@@ -9,8 +9,6 @@ import data from "../db";
 const SearchResults = ({ searchInput, distance, categories }) => {
     const [events, setEvents] = useState([]);
     
-    console.log(events[0]["title"])
-    
     useEffect(() => {
       // perform search based on given parameters
       setEvents(
@@ -18,22 +16,24 @@ const SearchResults = ({ searchInput, distance, categories }) => {
       );
     }, []);
 
-    return <View style={styles.screenContainer}>
-      {
-        events.map((event, indx) => {
-          return <Event
-            key={indx}
-            image={event.image}
-            title={event.title}
-            date={event.date}
-            time={event.time}
-            location={event.location}
-            categories={event.categories}
-            status=""
-          />
-        })
-      }
-    </View>
+    return (
+      <ScrollView contentContainerStyle={styles.screenContainer}>
+        {events.map((event, indx) => {
+          return (
+              <Event
+                key={indx}
+                image={event.image}
+                title={event.title}
+                date={event.date}
+                time={event.time}
+                location={event.location}
+                categories={event.categories}
+                status=""
+              />
+          );
+        })}
+      </ScrollView>
+    );
 }
 
 const styles = StyleSheet.create({
