@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 
+import Event from "../components/Event";
+
 import data from "../db";
 
 // distance parameter will not be used for the prototype as user location is unknown
 const SearchResults = ({ searchInput, distance, categories }) => {
     const [events, setEvents] = useState([]);
     
+    console.log(events[0]["title"])
+    
     useEffect(() => {
       // perform search based on given parameters
       setEvents(
-        data.events.filter(event => true)
+        data["events"].filter(() => true)
       );
-    })
+    }, []);
 
     return <View style={styles.screenContainer}>
       {
         events.map((event, indx) => {
-          <Event
+          return <Event
             key={indx}
             image={event.image}
             title={event.title}

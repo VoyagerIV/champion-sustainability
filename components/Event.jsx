@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 10,
     paddingVertical: 15,
   },
   image: {
