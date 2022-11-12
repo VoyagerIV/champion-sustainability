@@ -20,7 +20,13 @@ const SearchResults = ({ searchInput, distance, categories }) => {
 
     return (
       <View style={styles.screenContainer}>
-        <SearchBar value={newSearchInput} setValue={setNewSearchInput} submitSearch={() => console.log(`search: ${newSearchInput}`)} />
+        <View style={styles.searchContainer}>
+          <SearchBar
+            value={newSearchInput}
+            setValue={setNewSearchInput}
+            submitSearch={() => console.log(`search: ${newSearchInput}`)}
+          />
+        </View>
         <ScrollView contentContainerStyle={styles.list}>
           {events.map((event, indx) => {
             return (
@@ -43,16 +49,19 @@ const SearchResults = ({ searchInput, distance, categories }) => {
 
 const styles = StyleSheet.create({
   screenContainer: {
+    paddingTop: 50, // TODO: remove this after topbar is added
     width: "100%",
     maxHeight: "100%",
     display: "flex",
     alignItems: "center",
     paddingHorizontal: 23,
   },
+  searchContainer: {
+    width: "100%",
+    paddingBottom: 15
+  },
   list: {
     width: "100%",
-    height: "80%",
-    marginTop: 10
   },
 });
 
