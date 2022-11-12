@@ -87,9 +87,9 @@ const Categories = () => {
   return (
     <View style={styles.container}>
       {
-        [...Array(4).keys()].map(row => {
+        [...Array(4).keys()].map((row, indx) => {
           return (
-            <View style={styles.row}>
+            <View style={styles.row} key={indx}>
               {data[row].map((item, indx) => {
                 return (
                   <Category
@@ -112,7 +112,6 @@ const Categories = () => {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    paddingHorizontal: 25, // TODO: remove after padding is added to screen
   },
   row: {
     width: "100%",

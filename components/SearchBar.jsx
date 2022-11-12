@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     flexDirection: 'row',
-    width: '80%',
+    width: '100%',
     justifyContent: 'space-between'
   }
 });

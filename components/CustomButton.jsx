@@ -1,9 +1,9 @@
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
-const CustomButton = ({ title, onPress, disabled }) => {
+const CustomButton = ({ title, onPress, disabled, style }) => {
     return (
       <TouchableOpacity
-        style={disabled ? [styles.button, styles.disabled] : [styles.button, styles.enabled]}
+        style={disabled ? [style, styles.button, styles.disabled] : [style, styles.button, styles.enabled]}
         onPress={() => {
           if (!disabled) {
             onPress();

@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "column",
-    width: "80%",
-    padding: 20
+    width: "100%",
+    paddingVertical: 20
     
   },
 
@@ -28,24 +28,28 @@ const MySlider = ({message, start, end, step}) => {
 
 
 
-    return (<View style={styles.container}>
-
-      <Text>{message}{hookValue}</Text>
-      <Slider
-      style={styles.slider}
-      minimumValue={start}
-      maximumValue={end}
-      step={step}
-      minimumTrackTintColor="#00CA90"
-      maximumTrackTintColor="#000000"
-      onValueChange={(value)=> setHookValue(value)}
-      onSlidingComplete={(value)=> console.log(value)}
-      />
-      <View style={{...styles.text, }}>
-        <Text style={{"paddingLeft" : 9}}>{start}</Text> 
-        <Text style={{"paddingRight" : 9}}> {end}</Text> 
+    return (
+      <View style={styles.container}>
+        <Text>
+          {hookValue}
+          {message}
+        </Text>
+        <Slider
+          style={styles.slider}
+          minimumValue={start}
+          maximumValue={end}
+          step={step}
+          minimumTrackTintColor="#00CA90"
+          maximumTrackTintColor="#000000"
+          onValueChange={(value) => setHookValue(value)}
+          onSlidingComplete={(value) => console.log(value)}
+        />
+        <View style={{ ...styles.text }}>
+          <Text style={{ paddingLeft: 9 }}>{start}</Text>
+          <Text style={{ paddingRight: 9 }}> {end}</Text>
+        </View>
       </View>
-    </View>)
+    );
 };
 
 export default MySlider;
