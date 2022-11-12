@@ -64,14 +64,14 @@ const Category = ({ category, image, selected, setSelected }) => {
     return (
       <TouchableOpacity 
         style={
-          selected.includes(category) ? [styles.categoryContainer, styles.categorySelected] : styles.categoryContainer
+          selected.includes(category.toLowerCase()) ? [styles.categoryContainer, styles.categorySelected] : styles.categoryContainer
         }
         activeOpacity={1}
         onPress={() => {
-          if (selected.includes(category)) {
-            setSelected(selected.filter(item => item != category));
+          if (selected.includes(category.toLowerCase())) {
+            setSelected(selected.filter(item => item != category.toLowerCase()));
           } else {
-            setSelected([...selected, category])
+            setSelected([...selected, category.toLowerCase()])
           }
         }}
       >

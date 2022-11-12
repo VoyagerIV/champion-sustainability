@@ -10,6 +10,7 @@ import Slider from './components/Slider';
 import MyModal from './components/Modal';
 
 import Search from "./screens/Search";
+import SearchResults from "./screens/SearchResults";
 
 export default function App() {
   return (
@@ -37,7 +38,9 @@ export default function App() {
       {/* <Slider message="Km from my location: " start={0} end={12} step={1}/>
       <MyModal txt={"Insert message here"}/> */}
       
-      <Search />
+      {/* Screens */}
+      {/* <Search /> */}
+      <SearchResults />
       <StatusBar style="auto" />
     </View>
   );

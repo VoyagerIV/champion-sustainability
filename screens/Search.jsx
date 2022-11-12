@@ -55,7 +55,6 @@ const Search = () => {
     );
 }
 
-
 const styles = StyleSheet.create({
     screenContainer: {
         width: "100%",
