@@ -64,7 +64,7 @@ export const SliderWithVal = ({ message, start, end, step, value, setValue }) =>
         step={step}
         minimumTrackTintColor="#00CA90"
         maximumTrackTintColor="#000000"
-        onValueChange={(val) => setValue(val)}
+        onValueChange={setValue}
       />
       <View style={{ ...styles.text }}>
         <Text style={{ paddingLeft: 9 }}>{start}</Text>

@@ -12,6 +12,12 @@ const Search = () => {
     const [searchInput, setSearchInput] = useState("");
     const [distance, setDistance] = useState(0);
     
+    console.log({
+      "distance": distance,
+      "search": searchInput,
+      "categories": categories
+    })
+    
     useEffect(() => {
         console.log(distance)
     }, [distance])
@@ -19,12 +25,12 @@ const Search = () => {
     return (
       <View style={styles.screenContainer}>
         <View style={styles.sbContainer}>
-          <NoButtonSB />
+          <NoButtonSB value={searchInput} setValue={setSearchInput} />
         </View>
         <View style={styles.sliderContainer}>
           <SliderWithVal message=" km from me" start={0} end={10} step={1} value={distance} setValue={setDistance} />
         </View>
-        <Categories />
+        <Categories selected={categories} setSelected={setCategories}/>
         <CustomButton
           title="Search"
           onPress={() => {

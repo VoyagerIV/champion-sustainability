@@ -81,9 +81,7 @@ const Category = ({ category, image, selected, setSelected }) => {
     );
 }
 
-const Categories = () => {
-  const [selected, setSelected] = useState([]);
-  
+const Categories = ({ selected, setSelected }) => {  
   return (
     <View style={styles.container}>
       {
