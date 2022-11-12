@@ -54,6 +54,23 @@ const SB = (props) => {
   );
 };
 
+export const SearchBar = ({ value, setValue, submitSearch }) => {
+  return (
+    <View style={styles.SearchWindow}>
+      <TextInput
+        onChangeText={setValue}
+        value={value}
+        placeholder="Search by Location or Event Name"
+      />
+      <TouchableHighlight onPress={submitSearch}>
+        <IconComponentProvider IconComponent={MaterialCommunityIcons}>
+          <SearchIcon />
+        </IconComponentProvider>
+      </TouchableHighlight>
+    </View>
+  );
+};
+
 export const NoButtonSB = ({ value, setValue }) => {
   return (
     <View style={styles.SearchWindow}>
