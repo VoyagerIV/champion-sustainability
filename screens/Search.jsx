@@ -8,9 +8,21 @@ import { SliderWithVal } from "../components/Slider";
 import CustomButton from "../components/CustomButton";
 
 const Search = () => {
-    const [categories, setCategories] = useState([]);
     const [searchInput, setSearchInput] = useState("");
     const [distance, setDistance] = useState(0);
+    const [categories, setCategories] = useState([]);
+    
+    const [canSubmit, setCanSubmit] = useState(false);
+    
+    useEffect(() => {
+      // if all fields are filled, allow submission
+      if (searchInput.trim() !== "" && categories.length > 0) {
+        if (canSubmit === false) setCanSubmit(true)
+      } else {
+        // otherwise, disable submission
+        if (canSubmit === true) setCanSubmit(false)
+      }
+    }, [searchInput, distance, categories])
     
     console.log({
       "distance": distance,
@@ -36,7 +48,7 @@ const Search = () => {
           onPress={() => {
             console.log("search!!!");
           }}
-          disabled={false}
+          disabled={!canSubmit}
           style={styles.searchButton}
         />
       </View>
