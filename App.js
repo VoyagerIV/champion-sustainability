@@ -11,6 +11,7 @@ import MyModal from './components/Modal';
 
 import Search from "./screens/Search";
 import SearchResults from "./screens/SearchResults";
+import EventPage from "./screens/EventPage";
 
 export default function App() {
   return (
@@ -40,7 +41,8 @@ export default function App() {
       
       {/* Screens */}
       {/* <Search /> */}
-      <SearchResults />
+      {/* <SearchResults /> */}
+      <EventPage />
       <StatusBar style="auto" />
     </View>
   );
