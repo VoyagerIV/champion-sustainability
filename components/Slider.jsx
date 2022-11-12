@@ -23,11 +23,9 @@ const styles = StyleSheet.create({
   }
 })
 
-const MySlider = ({message, start, end, step}) => {
+const MySlider = ({message, start, end, step }) => {
     const [hookValue, setHookValue] = useState(0)
-
-
-
+    
     return (
       <View style={styles.container}>
         <Text>
@@ -50,6 +48,30 @@ const MySlider = ({message, start, end, step}) => {
         </View>
       </View>
     );
+};
+
+export const SliderWithVal = ({ message, start, end, step, value, setValue }) => {
+  return (
+    <View style={styles.container}>
+      <Text>
+        {value}
+        {message}
+      </Text>
+      <Slider
+        style={styles.slider}
+        minimumValue={start}
+        maximumValue={end}
+        step={step}
+        minimumTrackTintColor="#00CA90"
+        maximumTrackTintColor="#000000"
+        onValueChange={(val) => setValue(val)}
+      />
+      <View style={{ ...styles.text }}>
+        <Text style={{ paddingLeft: 9 }}>{start}</Text>
+        <Text style={{ paddingRight: 9 }}> {end}</Text>
+      </View>
+    </View>
+  );
 };
 
 export default MySlider;

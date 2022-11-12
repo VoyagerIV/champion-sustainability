@@ -4,6 +4,7 @@ import { Button, TextInput, View, StyleSheet, TouchableHighlight} from 'react-na
 import { Formik } from 'formik';
 import { IconComponentProvider, Icon } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   
@@ -45,6 +46,27 @@ const SB = (props) => {
       </View>
     )}
   </Formik>
+};
+
+export const NoButtonSB = ({ value, setValue }) => {
+  return (
+    <Formik
+      initialValues={{ search: "" }}
+      onSubmit={setValue}
+    >
+      {({ handleChange, handleBlur, handleSubmit, value }) => (
+        <View style={styles.SearchWindow}>
+          <TextInput
+            onChangeText={handleChange("search")}
+            onBlur={handleBlur("search")}
+            value={value}
+            placeholder="Search by Location or Event Name"
+          />
+          <MaterialIcons name="search" color="#d1d5db" size={25} />
+        </View>
+      )}
+    </Formik>
+  );
 };
 
 export default SB;

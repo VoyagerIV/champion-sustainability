@@ -1,18 +1,28 @@
+import { useState, useEffect } from "react";
+
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 
-import SB from "../components/SearchBar";
+import { NoButtonSB } from "../components/SearchBar";
 import Categories from "../components/Categories";
-import Slider from "../components/Slider";
+import { SliderWithVal } from "../components/Slider";
 import CustomButton from "../components/CustomButton";
 
 const Search = () => {
+    const [categories, setCategories] = useState([]);
+    const [searchInput, setSearchInput] = useState("");
+    const [distance, setDistance] = useState(0);
+    
+    useEffect(() => {
+        console.log(distance)
+    }, [distance])
+    
     return (
       <View style={styles.screenContainer}>
         <View style={styles.sbContainer}>
-          <SB />
+          <NoButtonSB />
         </View>
         <View style={styles.sliderContainer}>
-          <Slider message=" km from me" start={0} end={10} step={1} />
+          <SliderWithVal message=" km from me" start={0} end={10} step={1} value={distance} setValue={setDistance} />
         </View>
         <Categories />
         <CustomButton
