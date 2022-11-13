@@ -6,7 +6,7 @@ import MapView from "react-native-maps";
 import { Marker } from "react-native-maps";
 import Comment from "../components/Comment";
 import { SmallButton } from "../components/CustomButton";
-import { ReviewModal } from "../components/Modal";
+import { CommentModal } from "../components/Modal";
 import CustomButton from "../components/CustomButton";
 
 const EventPage = ({ route }) => {
@@ -32,16 +32,17 @@ const EventPage = ({ route }) => {
   return (
     <View>
       <ScrollView style={styles.screenContainer}>
-        <ReviewModal
+        <CommentModal
           isModalVisible={isModalVisible}
           setModalVisible={setModalVisible}
           rating={rating}
           setRating={setRating}
           message={message}
           setMessage={setMessage}
-          submitComment={() =>
+          submitComment={() => {
             console.log({ rating: rating, comment: message })
-          }
+            setModalVisible(false)
+          }}
         />
         <Image
           style={styles.image}

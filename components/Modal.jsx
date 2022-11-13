@@ -87,7 +87,7 @@ const MyModal = ({ txt }) => {
   );
 };
 
-export const ReviewModal = ({
+export const CommentModal = ({
   isModalVisible,
   setModalVisible,
   rating,
@@ -111,7 +111,7 @@ export const ReviewModal = ({
           <View style={styles.innerView}>
             <View>
               <Text style={styles.heading}>Leave Comment</Text>
-              <Text style={styles.label}>Rating (optional)</Text>
+              <Text style={styles.label}>Rating</Text>
               <StarRating rating={rating} setRating={setRating} />
               <Text style={styles.label}>Message</Text>
               <TextInput
