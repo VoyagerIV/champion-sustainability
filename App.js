@@ -14,7 +14,7 @@ import SearchResults from "./screens/SearchResults";
 import EventPage from "./screens/EventPage";
 import Login from './screens/Login';
 import Register from './screens/Register';
-
+import Dashboard from './screens/Dashboard';
 export default function App() {
   return (
     <View style={styles.container}>
@@ -49,8 +49,9 @@ export default function App() {
       {/* Screens */}
       {/* <Search /> */}
       {/* <SearchResults /> */}
-      <EventPage image="https://assets.weforum.org/article/image/lllYzG60bDfxJ6CRQUI5FTjkqI7-acWR4vam2s901IU.jpg" />
-      <StatusBar style="auto" />
+      {/* <EventPage image="https://assets.weforum.org/article/image/lllYzG60bDfxJ6CRQUI5FTjkqI7-acWR4vam2s901IU.jpg" />
+      <StatusBar style="auto" /> */}
+      <Dashboard></Dashboard>
     </View>
   );
 }

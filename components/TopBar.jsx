@@ -24,14 +24,17 @@ const TopBar =({ icon, title}) =>  {
 const styles = StyleSheet.create({
   container: {
     alignSelf: 'stretch',
-    height: 70,
+    height: 126,
     flexDirection: 'row', // row
     backgroundColor: '#00CA90',
     alignItems: 'center',
     justifyContent: 'space-between', // center, space-around
     paddingLeft: 10,
     paddingRight: 10,
-    top: 0
+    paddingTop: 56,
+    position: 'absolute',
+    top: 0,
+    width:'100%',
   },
   text:{
     color:'#fff',
