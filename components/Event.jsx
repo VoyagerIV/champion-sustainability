@@ -14,7 +14,7 @@ const CategoryTag = ({ category }) => {
     </View>
 }
 
-const Event = ({ image, title, organiser, date, time, location, categories, status }) => {
+const Event = ({ image, title, organiser, date, time, location, categories, status, onPress }) => {
     return (
       <Pressable
         style={({ pressed }) => [
@@ -25,6 +25,7 @@ const Event = ({ image, title, organiser, date, time, location, categories, stat
           },
           styles.container,
         ]}
+        onPress={onPress}
       >
         <Image
           style={styles.image}

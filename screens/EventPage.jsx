@@ -5,32 +5,32 @@ import IonIcon from "@expo/vector-icons/Ionicons";
 import MapView from "react-native-maps";
 import { Marker } from "react-native-maps";
 import Comment from "../components/Comment";
-import TopBar from "../components/TopBar";
 import { SmallButton } from "../components/CustomButton";
 import { ReviewModal } from "../components/Modal";
 import CustomButton from "../components/CustomButton";
 
-const EventPage = ({
-  image,
-  title,
-  organiser,
-  date,
-  time,
-  location,
-  attendees,
-  capacity,
-  categories,
-  status,
-  description,
-  comments
-}) => {
+const EventPage = ({ route }) => {
+  const {
+    image,
+    title,
+    organiser,
+    date,
+    time,
+    location,
+    attendees,
+    capacity,
+    categories,
+    status,
+    description,
+    comments,
+  } = route.params;
+
   const [isModalVisible, setModalVisible] = useState(false);
   const [rating, setRating] = useState(0);
   const [message, setMessage] = useState("");
-  
+
   return (
     <View>
-      <TopBar />
       <ScrollView style={styles.screenContainer}>
         <ReviewModal
           isModalVisible={isModalVisible}

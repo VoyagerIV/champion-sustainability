@@ -1,5 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Event from "./components/Event";
 import Comment from "./components/Comment";
@@ -9,15 +11,18 @@ import SB from './components/SearchBar';
 import Slider from './components/Slider';
 import MyModal from './components/Modal';
 import TopBar from './components/TopBar';
+import { TopBarBack } from './components/TopBar';
 import Search from "./screens/Search";
 import SearchResults from "./screens/SearchResults";
 import EventPage from "./screens/EventPage";
 import Login from './screens/Login';
 import Register from './screens/Register';
 
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
       {/* <Event
         image="https://olympus-imaging.com.au/content/000107507.jpg"
         title="Event title"
@@ -49,7 +54,7 @@ export default function App() {
       {/* Screens */}
       {/* <Search /> */}
       {/* <SearchResults /> */}
-      <EventPage
+      {/* <EventPage
         image="https://worldslargestlesson.globalgoals.org/wp-content/uploads/2020/08/Turtle-trapped-in-plastic-scaled-e1607518143472-355x300.jpg"
         title="Clean the Tasman Sea"
         organiser="Daniel Floyd"
@@ -69,12 +74,35 @@ export default function App() {
               "Great event! Been with this team on three events so far and they're the best!",
           },
         ]}
-      />
+      /> */}
 
       {/* <Login/> */}
       {/* <Register/> */}
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{
+            header: () => <TopBarBack title="Search" />,
+          }}
+          name="Search"
+          component={Search}
+        />
+        <Stack.Screen
+          options={{
+            header: () => <TopBarBack title="Events" />,
+          }}
+          name="SearchResults"
+          component={SearchResults}
+        />
+        <Stack.Screen
+          options={{
+            header: () => <TopBarBack title="Event" />,
+          }}
+          name="Event"
+          component={EventPage}
+        />
+      </Stack.Navigator>
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
 

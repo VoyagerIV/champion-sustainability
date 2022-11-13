@@ -7,7 +7,8 @@ import Event from "../components/Event";
 import data from "../db";
 
 // distance parameter will not be used for the prototype as user location is unknown
-const SearchResults = ({ searchInput, distance, categories }) => {
+const SearchResults = ({ route, navigation }) => {
+    const { searchInput, distance, categories } = route.params;
     const [newSearchInput, setNewSearchInput] = useState([]);
     const [events, setEvents] = useState([]);
     
@@ -16,6 +17,11 @@ const SearchResults = ({ searchInput, distance, categories }) => {
       setEvents(
         data["events"].filter(() => true)
       );
+      console.log({
+        "search": searchInput,
+        "distance": distance,
+        "categories": categories
+      })
     }, []);
 
     return (
@@ -39,6 +45,22 @@ const SearchResults = ({ searchInput, distance, categories }) => {
                 location={event.location}
                 categories={event.categories}
                 status=""
+                onPress={() =>
+                  navigation.navigate("Event", {
+                    image: event.image,
+                    title: event.title,
+                    organiser: event.organiser,
+                    date: event.organiser,
+                    time: event.time,
+                    location: event.location,
+                    attendees: event.attendees,
+                    capacity: event.capacity,
+                    categories: event.categories,
+                    description: event.description,
+                    comments: event.comments,
+                    status: "" 
+                  })
+                }
               />
             );
           })}
@@ -49,16 +71,16 @@ const SearchResults = ({ searchInput, distance, categories }) => {
 
 const styles = StyleSheet.create({
   screenContainer: {
-    paddingTop: 50, // TODO: remove this after topbar is added
     width: "100%",
     maxHeight: "100%",
     display: "flex",
     alignItems: "center",
     paddingHorizontal: 23,
+    paddingTop: 20,
   },
   searchContainer: {
     width: "100%",
-    paddingBottom: 15
+    paddingBottom: 15,
   },
   list: {
     width: "100%",

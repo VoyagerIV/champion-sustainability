@@ -7,7 +7,7 @@ import Categories from "../components/Categories";
 import { SliderWithVal } from "../components/Slider";
 import CustomButton from "../components/CustomButton";
 
-const Search = () => {
+const Search = ({ navigation }) => {
     const [searchInput, setSearchInput] = useState("");
     const [distance, setDistance] = useState(0);
     const [categories, setCategories] = useState([]);
@@ -23,17 +23,7 @@ const Search = () => {
         if (canSubmit === true) setCanSubmit(false)
       }
     }, [searchInput, distance, categories])
-    
-    console.log({
-      "distance": distance,
-      "search": searchInput,
-      "categories": categories
-    })
-    
-    useEffect(() => {
-        console.log(distance)
-    }, [distance])
-    
+
     return (
       <View style={styles.screenContainer}>
         <View style={styles.sbContainer}>
@@ -46,7 +36,11 @@ const Search = () => {
         <CustomButton
           title="Search"
           onPress={() => {
-            console.log("search!!!");
+            navigation.navigate("SearchResults", {
+              searchInput: searchInput,
+              distance: distance,
+              categories: categories
+            });
           }}
           disabled={!canSubmit}
           style={styles.searchButton}
@@ -61,13 +55,13 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "center",
         paddingHorizontal: 23,
+        paddingTop: 20
     },
     searchButton: {
         marginTop: 15,
     },
     sbContainer: {
         width: "100%",
-        marginTop: 10
     },
     sliderContainer: {
         width: "100%",
