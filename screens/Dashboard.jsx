@@ -1,5 +1,8 @@
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, SafeAreaView,  View, Image, Text, ScrollView, Dimensions} from "react-native";
 import TopBar from "../components/TopBar";
+import React from 'react';
+import CarouselCards from "../components/CarouselCardItem";
+
 
 const Dashboard = ({}) => {
   return (
@@ -8,11 +11,13 @@ const Dashboard = ({}) => {
       icon="https://cdn-icons-png.flaticon.com/512/4090/4090434.png"
       title="Welcome Ben">
       </TopBar>
-    <View>
     <Text style={styles.text}>Discover Events</Text>
-        <Text>Joined Events</Text>
-        <Text>My Events</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <CarouselCards />
+    </SafeAreaView>
+    <Text style={styles.text}>Joined Events</Text>
+    <Text style={styles.text}>My Events</Text>
+
     </>
   );
 };
@@ -21,8 +26,14 @@ const styles = StyleSheet.create({
 text:{
     fontSize: 30,
     fontWeight: 'bold',
-    textAlign:'left',
-}
+    justifyContent:'left',
+},
+container: {
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 50
+  },
 });
 
 export default Dashboard;

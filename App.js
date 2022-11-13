@@ -9,12 +9,14 @@ import SB from './components/SearchBar';
 import Slider from './components/Slider';
 import MyModal from './components/Modal';
 import TopBar from './components/TopBar';
+import Carousal from './components/Carousal';
 import Search from "./screens/Search";
 import SearchResults from "./screens/SearchResults";
 import EventPage from "./screens/EventPage";
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Dashboard from './screens/Dashboard';
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -51,7 +53,8 @@ export default function App() {
       {/* <SearchResults /> */}
       {/* <EventPage image="https://assets.weforum.org/article/image/lllYzG60bDfxJ6CRQUI5FTjkqI7-acWR4vam2s901IU.jpg" />
       <StatusBar style="auto" /> */}
-      <Dashboard></Dashboard>
+      <Dashboard />
+      {/* <Carousal></Carousal> */}
     </View>
   );
 }
