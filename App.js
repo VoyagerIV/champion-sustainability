@@ -8,7 +8,7 @@ import { StarRating } from './components/StarRating';
 import SB from './components/SearchBar';
 import Slider from './components/Slider';
 import MyModal from './components/Modal';
-
+import TopBar from './components/TopBar';
 import Search from "./screens/Search";
 import SearchResults from "./screens/SearchResults";
 import EventPage from "./screens/EventPage";
@@ -40,7 +40,12 @@ export default function App() {
       {/* <SB /> */}
       {/* <Slider message="Km from my location: " start={0} end={12} step={1}/>
       <MyModal txt={"Insert message here"}/> */}
-
+      {/* <TopBar
+      icon="https://cdn-icons-png.flaticon.com/512/4090/4090434.png"
+      title="Welcome Ben"></TopBar> */}
+      {/* <TopBar
+      icon="https://img.icons8.com/ios/512/left.png"
+      title="Host Event"></TopBar> */}
       {/* Screens */}
       {/* <Search /> */}
       {/* <SearchResults /> */}
