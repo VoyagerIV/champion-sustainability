@@ -49,7 +49,7 @@ export default function App() {
       {/* Screens */}
       {/* <Search /> */}
       {/* <SearchResults /> */}
-      {/* <EventPage
+      <EventPage
         image="https://worldslargestlesson.globalgoals.org/wp-content/uploads/2020/08/Turtle-trapped-in-plastic-scaled-e1607518143472-355x300.jpg"
         title="Clean the Tasman Sea"
         organiser="Daniel Floyd"
@@ -69,7 +69,7 @@ export default function App() {
               "Great event! Been with this team on three events so far and they're the best!",
           },
         ]}
-      /> */}
+      />
 
       {/* <Login/> */}
       {/* <Register/> */}

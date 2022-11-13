@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { StyleSheet, View, ScrollView, Image, Text } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import IonIcon from "@expo/vector-icons/Ionicons";
 import MapView from "react-native-maps";
 import { Marker } from "react-native-maps";
 import Comment from "../components/Comment";
+import TopBar from "../components/TopBar";
+import { SmallButton } from "../components/CustomButton";
+import { ReviewModal } from "../components/Modal";
+import CustomButton from "../components/CustomButton";
 
 const EventPage = ({
   image,
@@ -19,9 +24,25 @@ const EventPage = ({
   description,
   comments
 }) => {
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [rating, setRating] = useState(0);
+  const [message, setMessage] = useState("");
+  
   return (
-    <View style={styles.screenContainer}>
-      <ScrollView>
+    <View>
+      <TopBar />
+      <ScrollView style={styles.screenContainer}>
+        <ReviewModal
+          isModalVisible={isModalVisible}
+          setModalVisible={setModalVisible}
+          rating={rating}
+          setRating={setRating}
+          message={message}
+          setMessage={setMessage}
+          submitComment={() =>
+            console.log({ rating: rating, comment: message })
+          }
+        />
         <Image
           style={styles.image}
           source={{
@@ -60,9 +81,13 @@ const EventPage = ({
             {date}, {time}
           </Text>
         </View>
-        <Text style={styles.subheading}>Description</Text>
+        <Text style={[styles.subheading, styles.subheadingMargin]}>
+          Description
+        </Text>
         <Text style={styles.text}>{description}</Text>
-        <Text style={styles.subheading}>Location</Text>
+        <Text style={[styles.subheading, styles.subheadingMargin]}>
+          Location
+        </Text>
         <Text style={styles.text}>{location}</Text>
         <MapView
           style={styles.map}
@@ -75,7 +100,14 @@ const EventPage = ({
         >
           <Marker coordinate={{ latitude: -33.865143, longitude: 151.2099 }} />
         </MapView>
-        <Text style={styles.subheading}>Comments</Text>
+        <View style={styles.commentsHeader}>
+          <Text style={styles.subheading}>Comments</Text>
+          <SmallButton
+            title="Comment"
+            style={{ width: 100, backgroundColor: "#00CA90" }}
+            onPress={() => setModalVisible(true)}
+          />
+        </View>
         {comments.map((comment) => {
           return (
             <Comment
@@ -86,6 +118,13 @@ const EventPage = ({
             />
           );
         })}
+        <CustomButton
+          title="Join Event"
+          disabled={false}
+          style={{ marginTop: 15 }}
+          onPress={() => {}}
+        />
+        <View style={styles.offset} />
       </ScrollView>
     </View>
   );
@@ -93,7 +132,7 @@ const EventPage = ({
 
 const styles = StyleSheet.create({
   screenContainer: {
-    paddingTop: 50, // TODO: remove this after topbar is added
+    paddingTop: 25,
     width: "100%",
     maxHeight: "100%",
     display: "flex",
@@ -101,29 +140,31 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 180
+    height: 180,
   },
   infoRow: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 5
+    paddingVertical: 5,
   },
   heading: {
     fontSize: 22,
     fontWeight: "bold",
     marginTop: 15,
-    marginBottom: 10
+    marginBottom: 10,
   },
   subheading: {
     fontSize: 20,
     fontWeight: "600",
-    marginTop: 15,
-    marginBottom: 10
-  },  
+  },
+  subheadingMargin: {
+    marginTop: 12,
+    marginBottom: 10,
+  },
   text: {
     fontSize: 16,
-    lineHeight: 22
+    lineHeight: 22,
   },
   infoIcon: {
     marginRight: 7,
@@ -132,8 +173,19 @@ const styles = StyleSheet.create({
   map: {
     width: "100%",
     height: 200,
-    marginTop: 10
-  }
+    marginTop: 10,
+  },
+  offset: {
+    height: 100,
+  },
+  commentsHeader: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 12,
+    marginBottom: 10,
+  },
 });
 
 export default EventPage;

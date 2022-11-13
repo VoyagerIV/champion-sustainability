@@ -22,8 +22,7 @@ export const StarRatingStatic = ({ rating }) => {
   );
 };
 
-export const StarRating = () => {
-  const [rating, setRating] = useState(0);
+export const StarRating = ({ rating, setRating }) => {
 
   const selected = "#00CA90";
   const notSelected = "#C6C6C6";
