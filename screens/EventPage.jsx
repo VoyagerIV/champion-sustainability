@@ -1,5 +1,9 @@
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, ScrollView, Image, Text } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import IonIcon from "@expo/vector-icons/Ionicons";
+import MapView from "react-native-maps";
+import { Marker } from "react-native-maps";
+import Comment from "../components/Comment";
 
 const EventPage = ({
   image,
@@ -8,6 +12,8 @@ const EventPage = ({
   date,
   time,
   location,
+  attendees,
+  capacity,
   categories,
   status,
   description,
@@ -15,18 +21,72 @@ const EventPage = ({
 }) => {
   return (
     <View style={styles.screenContainer}>
-      <Image
-        style={styles.image}
-        source={{
-          uri: image,
-        }}
-      />
-      <Text>{title}</Text>
-      <View>
-        <FontAwesome name="building-o" color="#00CA90" size={25} />
-        <Text>{organiser}</Text>
-      </View>
-      <View></View>
+      <ScrollView>
+        <Image
+          style={styles.image}
+          source={{
+            uri: image,
+          }}
+        />
+        <Text style={styles.heading}>{title}</Text>
+        <View style={styles.infoRow}>
+          <FontAwesome
+            style={styles.infoIcon}
+            name="building-o"
+            color="#00CA90"
+            size={20}
+          />
+          <Text style={styles.text}>{organiser}</Text>
+        </View>
+        <View style={styles.infoRow}>
+          <IonIcon
+            style={styles.infoIcon}
+            name="people-outline"
+            color="#00CA90"
+            size={20}
+          />
+          <Text style={styles.text}>
+            {attendees} / {capacity}
+          </Text>
+        </View>
+        <View style={styles.infoRow}>
+          <FontAwesome
+            style={styles.infoIcon}
+            name="calendar"
+            color="#00CA90"
+            size={20}
+          />
+          <Text style={styles.text}>
+            {date}, {time}
+          </Text>
+        </View>
+        <Text style={styles.subheading}>Description</Text>
+        <Text style={styles.text}>{description}</Text>
+        <Text style={styles.subheading}>Location</Text>
+        <Text style={styles.text}>{location}</Text>
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: -33.865143,
+            longitude: 151.2099,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        >
+          <Marker coordinate={{ latitude: -33.865143, longitude: 151.2099 }} />
+        </MapView>
+        <Text style={styles.subheading}>Comments</Text>
+        {comments.map((comment) => {
+          return (
+            <Comment
+              poster={comment.poster}
+              posterImg={comment.posterImg}
+              rating={comment.rating}
+              comment={comment.comment}
+            />
+          );
+        })}
+      </ScrollView>
     </View>
   );
 };
@@ -37,12 +97,42 @@ const styles = StyleSheet.create({
     width: "100%",
     maxHeight: "100%",
     display: "flex",
-    alignItems: "center",
     paddingHorizontal: 23,
   },
   image: {
     width: "100%",
     height: 180
+  },
+  infoRow: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 5
+  },
+  heading: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginTop: 15,
+    marginBottom: 10
+  },
+  subheading: {
+    fontSize: 20,
+    fontWeight: "600",
+    marginTop: 15,
+    marginBottom: 10
+  },  
+  text: {
+    fontSize: 16,
+    lineHeight: 22
+  },
+  infoIcon: {
+    marginRight: 7,
+    width: 22,
+  },
+  map: {
+    width: "100%",
+    height: 200,
+    marginTop: 10
   }
 });
 

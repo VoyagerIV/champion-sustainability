@@ -44,9 +44,30 @@ export default function App() {
       {/* Screens */}
       {/* <Search /> */}
       {/* <SearchResults /> */}
-      {/* <EventPage image="https://assets.weforum.org/article/image/lllYzG60bDfxJ6CRQUI5FTjkqI7-acWR4vam2s901IU.jpg" /> */}
+      {/* <EventPage
+        image="https://worldslargestlesson.globalgoals.org/wp-content/uploads/2020/08/Turtle-trapped-in-plastic-scaled-e1607518143472-355x300.jpg"
+        title="Clean the Tasman Sea"
+        organiser="Daniel Floyd"
+        date="11/11/2022"
+        time="10:00AM - 3:00 PM"
+        description="Hello! I am Daniel and I am a final year Marine Biologist student! I am inviting anyone who is interested to join me in cleaning the Tasman Sea next Saturday. Join me by bringing your hats, sunscreen, big bags for waste, gloves, and any other prefered materials.  Heads up there are multiple resturants nearby that serves all types of dietry!"
+        attendees={25}
+        capacity={100}
+        location="Sydney NSW 2000"
+        comments={[
+          {
+            poster: "johnsmith",
+            posterImg:
+              "https://thebluegrasssituation.com/wp-content/uploads/2020/08/re-perez-branding-for-the-people-square-headshot.jpg",
+            rating: 5, // rating out of 5, 0 for no rating?
+            comment:
+              "Great event! Been with this team on three events so far and they're the best!",
+          },
+        ]}
+      /> */}
+
       {/* <Login/> */}
-      <Register/>
+      {/* <Register/> */}
       <StatusBar style="auto" />
     </View>
   );
