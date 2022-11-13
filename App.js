@@ -51,10 +51,8 @@ export default function App() {
       {/* Screens */}
       {/* <Search /> */}
       {/* <SearchResults /> */}
-      {/* <EventPage image="https://assets.weforum.org/article/image/lllYzG60bDfxJ6CRQUI5FTjkqI7-acWR4vam2s901IU.jpg" />
-      <StatusBar style="auto" /> */}
-      <Dashboard />
-      {/* <Carousal></Carousal> */}
+      <EventPage image="https://assets.weforum.org/article/image/lllYzG60bDfxJ6CRQUI5FTjkqI7-acWR4vam2s901IU.jpg" />
+      <StatusBar style="auto" />
     </View>
   );
 }
