@@ -12,11 +12,13 @@ import Slider from './components/Slider';
 import MyModal from './components/Modal';
 import TopBar from './components/TopBar';
 import { TopBarBack } from './components/TopBar';
+import Carousal from './components/Carousal';
 import Search from "./screens/Search";
 import SearchResults from "./screens/SearchResults";
 import EventPage from "./screens/EventPage";
 import Login from './screens/Login';
 import Register from './screens/Register';
+import Dashboard from './screens/Dashboard';
 
 const Stack = createNativeStackNavigator();
 

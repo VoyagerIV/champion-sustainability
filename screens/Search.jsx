@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "center",
         paddingHorizontal: 23,
-        paddingTop: 20
+        paddingTop: 150
     },
     searchButton: {
         marginTop: 15,

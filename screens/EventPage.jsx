@@ -132,11 +132,11 @@ const EventPage = ({ route }) => {
 
 const styles = StyleSheet.create({
   screenContainer: {
-    paddingTop: 25,
     width: "100%",
     maxHeight: "100%",
     display: "flex",
     paddingHorizontal: 23,
+    paddingTop: 150,
   },
   image: {
     width: "100%",
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   offset: {
-    height: 100,
+    height: 200,
   },
   commentsHeader: {
     display: "flex",
