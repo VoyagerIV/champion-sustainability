@@ -5,7 +5,7 @@ import Event from "../components/Event";
 
 import data from "../db";
 
-const getStatus = event => {
+const getStatus = (event) => {
   if (event.status.joined || event.status.organised) {
     if (event.status.complete) {
       return "attended";
@@ -13,17 +13,17 @@ const getStatus = event => {
       return "attending";
     }
   }
-  return ""
-}
+  return "";
+};
 
-const JoinedEvents = ({ navigation }) => {
+const OrganisedEvents = ({ navigation }) => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
     setEvents(
       data["events"].filter((event) => {
-        // only show joined but not hosted events
-        if (event.status.joined === true && event.status.organised === false) {
+        // only show organised events
+        if (event.status.organised) {
           return true;
         }
       })
@@ -57,7 +57,7 @@ const JoinedEvents = ({ navigation }) => {
                   categories: event.categories,
                   description: event.description,
                   comments: event.comments,
-                  status: getStatus(event)
+                  status: getStatus(event),
                 })
               }
             />
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default JoinedEvents;
+export default OrganisedEvents;

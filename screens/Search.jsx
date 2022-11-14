@@ -15,8 +15,8 @@ const Search = ({ navigation }) => {
     const [canSubmit, setCanSubmit] = useState(false);
     
     useEffect(() => {
-      // if all fields are filled, allow submission
-      if (searchInput.trim() !== "" && categories.length > 0) {
+      // if categories or search input is given, allow search submission
+      if (searchInput.trim() !== "" || categories.length > 0) {
         if (canSubmit === false) setCanSubmit(true)
       } else {
         // otherwise, disable submission

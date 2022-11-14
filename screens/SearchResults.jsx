@@ -63,7 +63,7 @@ const SearchResults = ({ route, navigation }) => {
                     categories: event.categories,
                     description: event.description,
                     comments: event.comments,
-                    status: "",
+                    status: event.status.complete,
                   })
                 }
               />

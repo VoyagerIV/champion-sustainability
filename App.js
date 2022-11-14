@@ -18,6 +18,7 @@ import Carousal from './components/Carousal';
 import Search from "./screens/Search";
 import SearchResults from "./screens/SearchResults";
 import JoinedEvents from "./screens/JoinedEvents";
+import OrganisedEvents from "./screens/OrganisedEvents";
 import EventPage from "./screens/EventPage";
 import Login from './screens/Login';
 import Register from './screens/Register';
@@ -87,13 +88,6 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           options={{
-            header: () => <TopBarBack title="Joined Events" />,
-          }}
-          name="JoinedEvents"
-          component={JoinedEvents}
-        />
-        <Stack.Screen
-          options={{
             header: () => <TopBarBack title="Search" />,
           }}
           name="Search"
@@ -105,6 +99,20 @@ export default function App() {
           }}
           name="SearchResults"
           component={SearchResults}
+        />
+        <Stack.Screen
+          options={{
+            header: () => <TopBarBack title="Joined Events" />,
+          }}
+          name="JoinedEvents"
+          component={JoinedEvents}
+        />
+        <Stack.Screen
+          options={{
+            header: () => <TopBarBack title="Organised Events" />,
+          }}
+          name="OrganisedEvents"
+          component={OrganisedEvents}
         />
         <Stack.Screen
           options={{

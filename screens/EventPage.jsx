@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { StyleSheet, View, ScrollView, Image, Text } from "react-native";
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  Image,
+  Text,
+  Switch,
+} from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import IonIcon from "@expo/vector-icons/Ionicons";
 import MapView from "react-native-maps";
@@ -8,6 +15,7 @@ import Comment from "../components/Comment";
 import { SmallButton } from "../components/CustomButton";
 import { CommentModal } from "../components/Modal";
 import CustomButton from "../components/CustomButton";
+import { Feather } from "@expo/vector-icons"; 
 
 const EventPage = ({ route }) => {
   const {
@@ -29,6 +37,10 @@ const EventPage = ({ route }) => {
   const [rating, setRating] = useState(0);
   const [message, setMessage] = useState("");
 
+  const [notificationOn, setNotificationOn] = useState(false);
+  const toggleSwitch = () =>
+    setNotificationOn((previousState) => !previousState);
+
   return (
     <View>
       <ScrollView style={styles.screenContainer}>
@@ -40,8 +52,8 @@ const EventPage = ({ route }) => {
           message={message}
           setMessage={setMessage}
           submitComment={() => {
-            console.log({ rating: rating, comment: message })
-            setModalVisible(false)
+            console.log({ rating: rating, comment: message });
+            setModalVisible(false);
           }}
         />
         <Image
@@ -50,6 +62,35 @@ const EventPage = ({ route }) => {
             uri: image,
           }}
         />
+        {status === "attending" && (
+          <View style={styles.statusContainer}>
+            <View style={[styles.statusRow, { paddingLeft: 5 }]}>
+              <Feather name="check-circle" size={25} color="#00CA90" />
+              <Text style={[styles.text, styles.status]}>Attending</Text>
+            </View>
+            <View style={styles.statusRow}>
+              <Switch
+                trackColor={{ false: "#767577", true: "#00CA90" }}
+                thumbColor={notificationOn ? "#f4f3f4" : "lightgray"}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={toggleSwitch}
+                value={notificationOn}
+                style={styles.switch}
+              />
+              <Text style={styles.text}>
+                Notification is {notificationOn ? "ON (1 day before)" : "OFF"}
+              </Text>
+            </View>
+          </View>
+        )}
+        {status === "attended" && (
+          <View
+            style={[styles.statusRow, { paddingLeft: 5}]}
+          >
+            <Feather name="check-circle" size={25} color="#00CA90" />
+            <Text style={[styles.text, styles.status]}>Attended</Text>
+          </View>
+        )}
         <Text style={styles.heading}>{title}</Text>
         <View style={styles.infoRow}>
           <FontAwesome
@@ -120,12 +161,14 @@ const EventPage = ({ route }) => {
             />
           );
         })}
-        <CustomButton
-          title="Join Event"
-          disabled={false}
-          style={{ marginTop: 15 }}
-          onPress={() => {}}
-        />
+        {status != "attended" && status != "attending" && (
+          <CustomButton
+            title="Join Event"
+            disabled={false}
+            style={{ marginTop: 15 }}
+            onPress={() => {}}
+          />
+        )}
         <View style={styles.offset} />
       </ScrollView>
     </View>
@@ -142,6 +185,7 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 180,
+    marginBottom: 15
   },
   infoRow: {
     display: "flex",
@@ -152,7 +196,6 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 22,
     fontWeight: "bold",
-    marginTop: 15,
     marginBottom: 10,
   },
   subheading: {
@@ -186,6 +229,23 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 12,
     marginBottom: 10,
+  },
+  statusContainer: {
+    marginBottom: 10,
+  },
+  status: {
+    color: "#00A676",
+    fontWeight: "500",
+    marginLeft: 22
+  },
+  switch: {
+    transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }],
+  },
+  statusRow: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 5,
   },
 });
 
