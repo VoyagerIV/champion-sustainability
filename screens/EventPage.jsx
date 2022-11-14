@@ -109,9 +109,10 @@ const EventPage = ({ route }) => {
             onPress={() => setModalVisible(true)}
           />
         </View>
-        {comments.map((comment) => {
+        {comments.map((comment, indx) => {
           return (
             <Comment
+              key={indx}
               poster={comment.poster}
               posterImg={comment.posterImg}
               rating={comment.rating}
@@ -134,7 +135,6 @@ const EventPage = ({ route }) => {
 const styles = StyleSheet.create({
   screenContainer: {
     width: "100%",
-    maxHeight: "100%",
     display: "flex",
     paddingHorizontal: 23,
     paddingTop: 150,

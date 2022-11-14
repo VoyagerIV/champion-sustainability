@@ -13,8 +13,11 @@ import MyModal from './components/Modal';
 import TopBar from './components/TopBar';
 import { TopBarBack } from './components/TopBar';
 import Carousal from './components/Carousal';
+
+// screens //
 import Search from "./screens/Search";
 import SearchResults from "./screens/SearchResults";
+import JoinedEvents from "./screens/JoinedEvents";
 import EventPage from "./screens/EventPage";
 import Login from './screens/Login';
 import Register from './screens/Register';
@@ -82,6 +85,13 @@ export default function App() {
       {/* <Login/> */}
       {/* <Register/> */}
       <Stack.Navigator>
+        <Stack.Screen
+          options={{
+            header: () => <TopBarBack title="Joined Events" />,
+          }}
+          name="JoinedEvents"
+          component={JoinedEvents}
+        />
         <Stack.Screen
           options={{
             header: () => <TopBarBack title="Search" />,

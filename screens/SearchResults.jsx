@@ -15,7 +15,12 @@ const SearchResults = ({ route, navigation }) => {
     useEffect(() => {
       // perform search based on given parameters
       setEvents(
-        data["events"].filter(() => true)
+        data["events"].filter(event => {
+          // only show upcoming events
+          if (event.status.complete === false) {
+            return true;
+          }
+        })
       );
       console.log({
         "search": searchInput,
@@ -58,12 +63,13 @@ const SearchResults = ({ route, navigation }) => {
                     categories: event.categories,
                     description: event.description,
                     comments: event.comments,
-                    status: "" 
+                    status: "",
                   })
                 }
               />
             );
           })}
+          <View style={styles.offset} />
         </ScrollView>
       </View>
     );
@@ -85,6 +91,9 @@ const styles = StyleSheet.create({
   list: {
     width: "100%",
   },
+  offset: {
+    height: 50
+  }
 });
 
 export default SearchResults;

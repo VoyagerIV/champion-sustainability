@@ -175,7 +175,7 @@ let data = {
       ],
       status: {
         organised: false,
-        joined: false,
+        joined: true,
         complete: false,
       },
     },
