@@ -1,23 +1,9 @@
 const treeEventDescription =
   "Trees soak up CO2 naturally, which helps to promote clean and healthy air for all of us. That’s not all though. With trees able to store CO2, they decrease the amount of CO2 in the atmosphere, while using it in the process of photosynthesis to produce sugar, provide energy, and release oxygen. Did you know that living near trees has been scientifically shown to improve our mental health? Having trees in your life is more than an aesthetic boost, they also help provide a natural boost to our cognitive and psychological health. Counsellor and psychologist, Amanda Woolveridge, believes trees can play a major role in mental health. So what are you waiting? Come join us in making our planet healthier and more sustainable.";
 
+
+// event data for current user
 let data = {
-  users: [
-    {
-      username: "susansmith",
-      email: "susan@gmail.com",
-      password: "pass",
-      badges: [],
-      attended_events: [{ event_id: 1, status: "pending" }], // {event_id, event_status: "pending" / "complete"}
-      organised_events: [], // {event_id, event_status: "pending" / "complete"}
-    },
-    {
-      username: "johnsmith",
-      email: "john@gmail.com",
-      password: "pass",
-      badges: [],
-    },
-  ],
   events: [
     {
       id: 1,
@@ -42,6 +28,11 @@ let data = {
             "Great event! Been with this team on three events so far and they're the best!",
         },
       ],
+      status: {
+        organised: false,
+        joined: false,
+        complete: false,
+      },
     },
     {
       id: 2,
@@ -66,6 +57,11 @@ let data = {
             "Great event! Been with this team on three events so far and they're the best!",
         },
       ],
+      status: {
+        organised: false,
+        joined: false,
+        complete: false,
+      },
     },
     {
       id: 3,
@@ -90,6 +86,11 @@ let data = {
             "Great event! Been with this team on three events so far and they're the best!",
         },
       ],
+      status: {
+        organised: false,
+        joined: false,
+        complete: false,
+      },
     },
     {
       id: 4,
@@ -114,6 +115,11 @@ let data = {
             "Great event! Been with this team on three events so far and they're the best!",
         },
       ],
+      status: {
+        organised: false,
+        joined: false,
+        complete: false,
+      },
     },
     {
       id: 5,
@@ -138,6 +144,11 @@ let data = {
             "Great event! Been with this team on three events so far and they're the best!",
         },
       ],
+      status: {
+        organised: false,
+        joined: false,
+        complete: false,
+      },
     },
     {
       id: 6,
@@ -162,6 +173,11 @@ let data = {
             "Great event! Been with this team on three events so far and they're the best!",
         },
       ],
+      status: {
+        organised: false,
+        joined: false,
+        complete: false,
+      },
     },
   ],
 };
