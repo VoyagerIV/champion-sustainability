@@ -1,19 +1,19 @@
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 const CustomButton = ({ title, onPress, disabled, style }) => {
-    return (
-      <TouchableOpacity
-        style={disabled ? [style, styles.button, styles.disabled] : [style, styles.button, styles.enabled]}
-        onPress={() => {
-          if (!disabled) {
-            onPress();
-          }
-        }}
-        activeOpacity={0.8}
-      >
-        <Text style={styles.title}>{ title }</Text>
-      </TouchableOpacity>
-    );
+  return (
+    <TouchableOpacity
+      style={disabled ? [style, styles.button, styles.disabled] : [style, styles.button, styles.enabled]}
+      onPress={() => {
+        if (!disabled) {
+          onPress();
+        }
+      }}
+      activeOpacity={0.8}
+    >
+      <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
+  );
 }
 
 export const SmallButton = ({ title, onPress, style }) => {

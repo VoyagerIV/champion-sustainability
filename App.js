@@ -19,6 +19,7 @@ import EventPage from "./screens/EventPage";
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Dashboard from './screens/Dashboard';
+import HostEvent from './screens/HostEvent';
 
 const Stack = createNativeStackNavigator();
 
@@ -104,6 +105,7 @@ export default function App() {
         />
       </Stack.Navigator>
       <StatusBar style="auto" />
+      {/* <HostEvent /> */}
     </NavigationContainer>
   );
 }
