@@ -24,6 +24,7 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 import Dashboard from './screens/Dashboard';
 import HostEvent from './screens/HostEvent';
+import Carousel from './components/Carousal'
 
 const Stack = createNativeStackNavigator();
 
@@ -85,7 +86,7 @@ export default function App() {
 
       {/* <Login/> */}
       {/* <Register/> */}
-      <Stack.Navigator>
+      {/* <Stack.Navigator>
         <Stack.Screen
           options={{
             header: () => <TopBarBack title="Search" />,
@@ -122,8 +123,9 @@ export default function App() {
           component={EventPage}
         />
       </Stack.Navigator>
-      <StatusBar style="auto" />
+      <StatusBar style="auto" /> */}
       {/* <HostEvent /> */}
+      <Carousal />
     </NavigationContainer>
   );
 }
