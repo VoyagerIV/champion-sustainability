@@ -82,7 +82,19 @@ export default function App() {
 
       {/* <Login/> */}
       {/* <Register/> */}
-      {/* <Stack.Navigator>
+
+      <Stack.Navigator>
+
+        <Stack.Screen
+          name="Register"
+          component={Register}
+        />
+
+        <Stack.Screen
+          name="Login"
+          component={Login}
+        />
+
         <Stack.Screen
           options={{
             header: () => <TopBarBack title="Search" />,
@@ -105,9 +117,9 @@ export default function App() {
           component={EventPage}
         />
       </Stack.Navigator>
-      <StatusBar style="auto" /> */}
-      {/* <HostEvent /> */}
-      <Carousal />
+      {/* <StatusBar style="auto" /> */}
+      {/* <HostEvent />
+      {/* <Carousal /> */}
     </NavigationContainer>
   );
 }
