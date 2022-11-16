@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import { Formik } from "formik";
 import CustomButton from "../components/CustomButton";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const styles = StyleSheet.create({
   MainContainer: {
@@ -20,9 +22,9 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-  
 
-  },  
+
+  },
   SearchWindow: {
     // backgroundColor: "grey",
     borderColor: "green",
@@ -40,43 +42,48 @@ const styles = StyleSheet.create({
   }
 });
 
-const Login = () => {
+const Login = ({ route, navigation }) => {
+
   return (
     <View style={styles.MainContainer}>
-        <Formik
+      <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={values => console.log(values)}
-        style={{...styles.MainContainer, ...{backgroundColor: "blue"}}}
-        >
+        style={{ ...styles.MainContainer, ...{ backgroundColor: "blue" } }}
+      >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
-        <View 
+          <View
             style={styles.MainContainer}
-        >
-            <View style={{...styles.MainContainer, flex: 11 }}>
-                <Text style={styles.label}>Email</Text>
+          >
+            <View style={{ ...styles.MainContainer, flex: 11 }}>
+              <Text style={styles.label}>Email</Text>
 
-                <TextInput
+              <TextInput
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values.email}
                 style={styles.SearchWindow}
-                />
-                <Text style={styles.label}>Password</Text>
+              />
+              <Text style={styles.label}>Password</Text>
 
-                <TextInput
+              <TextInput
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
                 style={styles.SearchWindow}
                 secureTextEntry={true}
-                />
+              />
             </View>
-            <View style={{width: "90%", flex: 1}}>
-                <CustomButton  onPress={handleSubmit} title={"Login"}/>
+            <View style={{ width: "90%", flex: 1 }}>
+              <CustomButton onPress={() => {
+                handleSubmit
+                navigation.navigate('Search')
+
+              }} title={"Login"} />
             </View>
-        </View>
+          </View>
         )}
-    </Formik>
+      </Formik>
     </View>
   );
 };
