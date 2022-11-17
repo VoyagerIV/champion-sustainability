@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import { Formik } from "formik";
 import CustomButton from "../components/CustomButton";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const styles = StyleSheet.create({
   MainContainer: {
@@ -20,9 +22,9 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-  
 
-  },  
+
+  },
   SearchWindow: {
     // backgroundColor: "grey",
     borderColor: "green",
@@ -40,60 +42,64 @@ const styles = StyleSheet.create({
   }
 });
 
-const Register = () => {
+const Register = ({ route, navigation }) => {
   return (
     <View style={styles.MainContainer}>
-        <Formik
-        initialValues={{name: '', email: '', password: '', confirmPassword: '' }}
+      <Formik
+        initialValues={{ name: '', email: '', password: '', confirmPassword: '' }}
         onSubmit={values => console.log(values)}
-        style={{...styles.MainContainer, ...{backgroundColor: "blue"}}}
-        >
+        style={{ ...styles.MainContainer, ...{ backgroundColor: "blue" } }}
+      >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
-        <View 
+          <View
             style={styles.MainContainer}
-        >
-            <View style={{...styles.MainContainer, flex: 11 }}>
-                <Text style={styles.label}>Name</Text>
+          >
+            <View style={{ ...styles.MainContainer, flex: 11 }}>
+              <Text style={styles.label}>Name</Text>
 
-                <TextInput
+              <TextInput
                 onChangeText={handleChange('name')}
                 onBlur={handleBlur('name')}
                 value={values.name}
                 style={styles.SearchWindow}
-                />
-                <Text style={styles.label}>Email</Text>
+              />
+              <Text style={styles.label}>Email</Text>
 
-                <TextInput
+              <TextInput
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values.email}
                 style={styles.SearchWindow}
-                />
-                <Text style={styles.label}>Password</Text>
+              />
+              <Text style={styles.label}>Password</Text>
 
-                <TextInput
+              <TextInput
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
                 style={styles.SearchWindow}
                 secureTextEntry={true}
-                />
-                <Text style={styles.label}>Confirm Password</Text>
+              />
+              <Text style={styles.label}>Confirm Password</Text>
 
-                <TextInput
+              <TextInput
                 onChangeText={handleChange('confirmPassword')}
                 onBlur={handleBlur('confirmPassword')}
                 value={values.confirmPassword}
                 style={styles.SearchWindow}
                 secureTextEntry={true}
-                />
+              />
             </View>
-            <View style={{width: "90%", flex: 1}}>
-                <CustomButton  onPress={handleSubmit} title={"Register"}/>
+            <View style={{ width: "90%", flex: 1 }}>
+              <CustomButton onPress={() => {
+                handleSubmit
+                navigation.navigate('Search')
+
+              }} title={"Register"} />
             </View>
-        </View>
+          </View>
         )}
-    </Formik>
+      </Formik>
     </View>
   );
 };
