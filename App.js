@@ -25,7 +25,7 @@ import Register from './screens/Register';
 import Dashboard from './screens/Dashboard';
 import HostEvent from './screens/HostEvent';
 import Carousel from './components/Carousal'
-
+import MyBadges from './screens/MyBadges';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -140,7 +140,9 @@ export default function App() {
     //   <Carousal />
     // </NavigationContainer>
     <Dashboard></Dashboard>
+    // <Carousal/>
     // <JoinedEvents></JoinedEvents>
+    // <MyBadges></MyBadges>
   );
 }
 
