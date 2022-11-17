@@ -125,7 +125,9 @@ export default function App() {
       </Stack.Navigator>
       <StatusBar style="auto" /> */}
       {/* <HostEvent /> */}
-      <Carousal />
+      {/* <Carousal /> */}
+      <Dashboard/>
+      {/* <Search/> */}
     </NavigationContainer>
   );
 }

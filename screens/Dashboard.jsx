@@ -1,22 +1,28 @@
-import { StyleSheet, SafeAreaView,  View, Image, Text, ScrollView, Dimensions} from "react-native";
+import { StyleSheet, Text, View} from "react-native";
 import TopBar from "../components/TopBar";
 import React from 'react';
-import CarouselCards from "../components/CarouselCardItem";
-
+import { SearchBar } from "../components/SearchBar";
+import { SmallButton } from "../components/CustomButton";
 
 const Dashboard = ({}) => {
   return (
     <>
-    <TopBar
-      icon="https://cdn-icons-png.flaticon.com/512/4090/4090434.png"
-      title="Welcome Ben">
+      <TopBar
+        icon="https://cdn-icons-png.flaticon.com/512/4090/4090434.png"
+        title="Welcome Ben!">
       </TopBar>
-    <Text style={styles.text}>Discover Events</Text>
-    <SafeAreaView style={styles.container}>
-      <CarouselCards />
-    </SafeAreaView>
-    <Text style={styles.text}>Joined Events</Text>
-    <Text style={styles.text}>My Events</Text>
+      <View style={styles.searchButton}> 
+        <SearchBar></SearchBar>
+      </View>
+      
+      <Text style={styles.text}>Discover Events</Text>
+      <Text style={styles.text}>Joined Events</Text>
+      <Text style={styles.text}>My Events</Text>
+      
+     {/* </> <View title={"+Host Event"}> */}
+      <SmallButton title="+ Host Event"></SmallButton>
+      
+     
 
     </>
   );
@@ -24,9 +30,11 @@ const Dashboard = ({}) => {
 
 const styles = StyleSheet.create({
 text:{
-    fontSize: 30,
+    flex: 0.25,
+    fontSize: 25,
     fontWeight: 'bold',
-    justifyContent:'left',
+    top: '5%',
+    left: 20,
 },
 container: {
     backgroundColor: '#fff',
@@ -34,6 +42,13 @@ container: {
     justifyContent: 'center',
     padding: 50
   },
+  searchButton: {
+    paddingTop: '35%',
+    width:'90%',
+    left: 20,
+},
+
+
 });
 
 export default Dashboard;
