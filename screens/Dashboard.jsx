@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View} from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity} from "react-native";
 import TopBar from "../components/TopBar";
 import React from 'react';
 import { SearchBar } from "../components/SearchBar";
-import { SmallButton } from "../components/CustomButton";
 
 const Dashboard = ({}) => {
   return (
@@ -18,9 +17,14 @@ const Dashboard = ({}) => {
       <Text style={styles.text}>Discover Events</Text>
       <Text style={styles.text}>Joined Events</Text>
       <Text style={styles.text}>My Events</Text>
-      
-     {/* </> <View title={"+Host Event"}> */}
-      <SmallButton title="+ Host Event"></SmallButton>
+
+      <View>
+        <TouchableOpacity style={styles.btn} >
+        <Text style={styles.title}>
+          + HOST EVENT</Text>
+      </TouchableOpacity>
+      </View>
+     
       
      
 
@@ -46,6 +50,22 @@ container: {
     paddingTop: '35%',
     width:'90%',
     left: 20,
+},
+btn:{
+  left: 260,
+  bottom: "175%",
+  height: 40,
+  width: 140, 
+  borderRadius: 80,
+  backgroundColor: "#3BB143",
+  marginVertical: 20,
+  alignItems: "center",
+  justifyContent: "center",
+},
+title: {
+  color: "white",
+  fontSize: 16,
+  fontWeight: "bold",
 },
 
 
