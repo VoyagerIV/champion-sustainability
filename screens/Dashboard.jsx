@@ -19,13 +19,13 @@ const Dashboard = ({}) => {
       </View>
       
       <Text style={styles.text}>Discover Events</Text>
-      <Carousel data={[{"t": "Clean The Tasman Sea", 'i': require('../assets/turtle.jpg')},{"t": "Clean Manly Beach", 
-      'i': require('../assets/beach.jpg')},{"t": "Introduction to Bee Keeping", 
+      <Carousel data={[{"t": "Clean The Tasman Sea", 'i': require('../assets/turtle.jpg')},
+      {"t": "Clean Manly Beach", 'i': require('../assets/beach.jpg')},
+      {"t": "Introduction to Bee Keeping", 
       'i': require('../assets/bees.jpg')}]} />
       <Text style={styles.text}>Joined Events</Text>
-      <Carousel data={[{"t": "Sustainability Discussion", 'i': require('../assets/discussion.jpeg')},{"t": "Sustainability Fashion", 'i': require('../assets/fashion.jpg')}]} />
-    
-  
+      <Carousel data={[{"t": "Sustainability Discussion", 'i': require('../assets/discussion.jpeg')},
+      {"t": "Sustainability Fashion", 'i': require('../assets/fashion.jpg')}]} />
 
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Text style={styles.text}>My Events</Text>
@@ -36,23 +36,16 @@ const Dashboard = ({}) => {
         </View>
       </ScrollView>
       </View>
-     
-      
-     
-
     </>
   );
 };
 
 const styles = StyleSheet.create({
 text:{
- 
     fontSize: 25,
     fontWeight: 'bold',
     left: 20,
-    marginVertical: 10,
-
-    
+    marginVertical: 10, 
 },
 container: {
     backgroundColor: '#fff',
