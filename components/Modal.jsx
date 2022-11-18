@@ -1,13 +1,11 @@
-import { React, useCallback, useState, useEffect } from "react";
+import { React, useState } from "react";
 import {
   Button,
   TextInput,
   View,
   StyleSheet,
-  TouchableHighlight,
   Text,
 } from "react-native";
-import { Flex } from "@react-native-material/core";
 import Modal from "react-native-modal";
 import { SmallButton } from "./CustomButton";
 import { StarRating } from "./StarRating";
@@ -62,8 +60,6 @@ const MyModal = ({ txt }) => {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
-
-  // Remove the top view style if you want
 
   return (
     <>

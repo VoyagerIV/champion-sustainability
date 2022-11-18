@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     bTitle: {
         fontSize: 20,
         fontWeight: 'bold',
-        // textAlignVertical: "center", 
         textAlign: "left",
         marginVertical: 10,
     },
@@ -78,8 +77,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     text: {
-        // textAlignVertical: "left",
-        // textAlign: "left"
     },
     title: {
         color: "black",

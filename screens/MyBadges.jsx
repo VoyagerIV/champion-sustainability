@@ -1,5 +1,3 @@
-///import { StyleSheet, Text, View, TouchableOpacity} from "react-native";
-import TopBar from "../components/TopBar";
 import React from 'react';
 import {
   StyleSheet,

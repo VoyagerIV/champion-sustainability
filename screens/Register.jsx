@@ -1,21 +1,16 @@
 // Formik x React Native example
 import React from "react";
 import {
-  Button,
   TextInput,
   View,
   StyleSheet,
-  TouchableHighlight,
   Text
 } from "react-native";
 import { Formik } from "formik";
 import CustomButton from "../components/CustomButton";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const styles = StyleSheet.create({
   MainContainer: {
-    // backgroundColor: "red",
     display: "flex",
     flexDirection: "column",
     height: "100%",
@@ -24,7 +19,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   SearchWindow: {
-    // backgroundColor: "grey",
     borderColor: "green",
     borderWidth: 2,
     borderRadius: 10,
@@ -40,7 +34,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Register = ({ route, navigation }) => {
+const Register = ({ navigation }) => {
   return (
     <View style={styles.MainContainer}>
       <Formik

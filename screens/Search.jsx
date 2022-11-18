@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 
 import { NoButtonSB } from "../components/SearchBar";
 import Categories from "../components/Categories";
@@ -8,55 +8,55 @@ import { SliderWithVal } from "../components/Slider";
 import CustomButton from "../components/CustomButton";
 
 const Search = ({ navigation }) => {
-    const [searchInput, setSearchInput] = useState("");
-    const [distance, setDistance] = useState(0);
-    const [categories, setCategories] = useState([]);
-    
-    const [canSubmit, setCanSubmit] = useState(false);
-    
-    useEffect(() => {
-      // if categories or search input is given, allow search submission
-      if (searchInput.trim() !== "" || categories.length > 0) {
-        if (canSubmit === false) setCanSubmit(true)
-      } else {
-        // otherwise, disable submission
-        if (canSubmit === true) setCanSubmit(false)
-      }
-    }, [searchInput, distance, categories])
+  const [searchInput, setSearchInput] = useState("");
+  const [distance, setDistance] = useState(0);
+  const [categories, setCategories] = useState([]);
 
-    return (
-      <View style={styles.screenContainer}>
-        <ScrollView style={styles.scrollContainer}>
-          <View style={styles.sbContainer}>
-            <NoButtonSB value={searchInput} setValue={setSearchInput} />
-          </View>
-          <View style={styles.sliderContainer}>
-            <SliderWithVal
-              message=" km from me"
-              start={0}
-              end={10}
-              step={1}
-              value={distance}
-              setValue={setDistance}
-            />
-          </View>
-          <Categories selected={categories} setSelected={setCategories} />
-          <CustomButton
-            title="Search"
-            onPress={() => {
-              navigation.navigate("SearchResults", {
-                searchInput: searchInput,
-                distance: distance,
-                categories: categories,
-              });
-            }}
-            disabled={!canSubmit}
-            style={styles.searchButton}
+  const [canSubmit, setCanSubmit] = useState(false);
+
+  useEffect(() => {
+    // if categories or search input is given, allow search submission
+    if (searchInput.trim() !== "" || categories.length > 0) {
+      if (canSubmit === false) setCanSubmit(true)
+    } else {
+      // otherwise, disable submission
+      if (canSubmit === true) setCanSubmit(false)
+    }
+  }, [searchInput, distance, categories])
+
+  return (
+    <View style={styles.screenContainer}>
+      <ScrollView style={styles.scrollContainer}>
+        <View style={styles.sbContainer}>
+          <NoButtonSB value={searchInput} setValue={setSearchInput} />
+        </View>
+        <View style={styles.sliderContainer}>
+          <SliderWithVal
+            message=" km from me"
+            start={0}
+            end={10}
+            step={1}
+            value={distance}
+            setValue={setDistance}
           />
-          <View style={{paddingBottom: 50}}></View>
-        </ScrollView>
-      </View>
-    );
+        </View>
+        <Categories selected={categories} setSelected={setCategories} />
+        <CustomButton
+          title="Search"
+          onPress={() => {
+            navigation.navigate("SearchResults", {
+              searchInput: searchInput,
+              distance: distance,
+              categories: categories,
+            });
+          }}
+          disabled={!canSubmit}
+          style={styles.searchButton}
+        />
+        <View style={{ paddingBottom: 50 }}></View>
+      </ScrollView>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
