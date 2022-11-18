@@ -46,39 +46,45 @@ const Login = ({ route, navigation }) => {
   return (
     <View style={styles.MainContainer}>
       <Formik
-        initialValues={{ email: '', password: '' }}
-        onSubmit={values => console.log(values)}
+        initialValues={{ email: "", password: "" }}
+        onSubmit={(values) => console.log(values)}
         style={{ ...styles.MainContainer, ...{ backgroundColor: "blue" } }}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
-          <View
-            style={styles.MainContainer}
-          >
+          <View style={styles.MainContainer}>
             <View style={{ ...styles.MainContainer, flex: 11 }}>
               <Text style={styles.label}>Email</Text>
 
               <TextInput
-                onChangeText={handleChange('email')}
-                onBlur={handleBlur('email')}
+                onChangeText={handleChange("email")}
+                onBlur={handleBlur("email")}
                 value={values.email}
                 style={styles.SearchWindow}
               />
               <Text style={styles.label}>Password</Text>
 
               <TextInput
-                onChangeText={handleChange('password')}
-                onBlur={handleBlur('password')}
+                onChangeText={handleChange("password")}
+                onBlur={handleBlur("password")}
                 value={values.password}
                 style={styles.SearchWindow}
                 secureTextEntry={true}
               />
             </View>
+            <Text
+              style={{ fontSize: 16, marginBottom: 5, color: "#00CA90" }}
+              onPress={() => navigation.navigate("Register")}
+            >
+              Don't have an account? Register
+            </Text>
             <View style={{ width: "90%", flex: 1 }}>
-              <CustomButton onPress={() => {
-                handleSubmit
-                navigation.navigate('DashBoard')
-
-              }} title={"Login"} />
+              <CustomButton
+                onPress={() => {
+                  handleSubmit;
+                  navigation.navigate("DashBoard");
+                }}
+                title={"Login"}
+              />
             </View>
           </View>
         )}
