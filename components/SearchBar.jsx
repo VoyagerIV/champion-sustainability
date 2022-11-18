@@ -6,11 +6,13 @@ import {
   View,
   StyleSheet,
   TouchableHighlight,
+  TouchableOpacity,
 } from "react-native";
 import { Formik } from "formik";
 import { IconComponentProvider, Icon } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { useNavigation } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   SearchWindow: {
@@ -56,7 +58,9 @@ const SB = (props) => {
 
 export const SearchBar = ({ value, setValue, submitSearch }) => {
   return (
-    <View style={styles.SearchWindow}>
+    <View
+      style={styles.SearchWindow}
+    >
       <TextInput
         onChangeText={setValue}
         value={value}
@@ -68,6 +72,29 @@ export const SearchBar = ({ value, setValue, submitSearch }) => {
         </IconComponentProvider>
       </TouchableHighlight>
     </View>
+  );
+};
+
+export const DisabledSearch = () => {
+  const navigation = useNavigation();
+  return (
+    <TouchableOpacity
+      style={styles.SearchWindow}
+      onPress={() => navigation.navigate("Search")}
+    >
+      <View pointerEvents="none" style={{ display: "flex", justifyContent: "center"}}>
+        <TextInput
+          placeholder="Search by Location or Event Name"
+          editable={false}
+          onFocus={() => navigation.navigate("Search")}
+        />
+      </View>
+      <TouchableHighlight>
+        <IconComponentProvider IconComponent={MaterialCommunityIcons}>
+          <SearchIcon />
+        </IconComponentProvider>
+      </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 

@@ -36,6 +36,8 @@ const EventPage = ({ route }) => {
   const [isModalVisible, setModalVisible] = useState(false);
   const [rating, setRating] = useState(0);
   const [message, setMessage] = useState("");
+  
+  const [eventStatus, setEventStatus] = useState(status);
 
   const [notificationOn, setNotificationOn] = useState(false);
   const toggleSwitch = () =>
@@ -62,7 +64,7 @@ const EventPage = ({ route }) => {
             uri: image,
           }}
         />
-        {status === "attending" && (
+        {eventStatus === "attending" && (
           <View style={styles.statusContainer}>
             <View style={[styles.statusRow, { paddingLeft: 5 }]}>
               <Feather name="check-circle" size={25} color="#00CA90" />
@@ -83,10 +85,8 @@ const EventPage = ({ route }) => {
             </View>
           </View>
         )}
-        {status === "attended" && (
-          <View
-            style={[styles.statusRow, { paddingLeft: 5}]}
-          >
+        {eventStatus === "attended" && (
+          <View style={[styles.statusRow, { paddingLeft: 5 }]}>
             <Feather name="check-circle" size={25} color="#00CA90" />
             <Text style={[styles.text, styles.status]}>Attended</Text>
           </View>
@@ -161,12 +161,14 @@ const EventPage = ({ route }) => {
             />
           );
         })}
-        {status != "attended" && status != "attending" && (
+        {eventStatus != "attended" && eventStatus != "attending" && (
           <CustomButton
             title="Join Event"
             disabled={false}
             style={{ marginTop: 15 }}
-            onPress={() => {}}
+            onPress={() => {
+              setEventStatus("attending");
+            }}
           />
         )}
         <View style={styles.offset} />
@@ -180,7 +182,7 @@ const styles = StyleSheet.create({
     width: "100%",
     display: "flex",
     paddingHorizontal: 23,
-    paddingTop: 150,
+    paddingTop: 15,
   },
   image: {
     width: "100%",
@@ -220,7 +222,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   offset: {
-    height: 200,
+    height: 100,
   },
   commentsHeader: {
     display: "flex",

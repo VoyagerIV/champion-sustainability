@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 
 import { NoButtonSB } from "../components/SearchBar";
 import Categories from "../components/Categories";
@@ -26,47 +26,62 @@ const Search = ({ navigation }) => {
 
     return (
       <View style={styles.screenContainer}>
-        <View style={styles.sbContainer}>
-          <NoButtonSB value={searchInput} setValue={setSearchInput} />
-        </View>
-        <View style={styles.sliderContainer}>
-          <SliderWithVal message=" km from me" start={0} end={10} step={1} value={distance} setValue={setDistance} />
-        </View>
-        <Categories selected={categories} setSelected={setCategories}/>
-        <CustomButton
-          title="Search"
-          onPress={() => {
-            navigation.navigate("SearchResults", {
-              searchInput: searchInput,
-              distance: distance,
-              categories: categories
-            });
-          }}
-          disabled={!canSubmit}
-          style={styles.searchButton}
-        />
+        <ScrollView style={styles.scrollContainer}>
+          <View style={styles.sbContainer}>
+            <NoButtonSB value={searchInput} setValue={setSearchInput} />
+          </View>
+          <View style={styles.sliderContainer}>
+            <SliderWithVal
+              message=" km from me"
+              start={0}
+              end={10}
+              step={1}
+              value={distance}
+              setValue={setDistance}
+            />
+          </View>
+          <Categories selected={categories} setSelected={setCategories} />
+          <CustomButton
+            title="Search"
+            onPress={() => {
+              navigation.navigate("SearchResults", {
+                searchInput: searchInput,
+                distance: distance,
+                categories: categories,
+              });
+            }}
+            disabled={!canSubmit}
+            style={styles.searchButton}
+          />
+          <View style={{paddingBottom: 50}}></View>
+        </ScrollView>
       </View>
     );
 }
 
 const styles = StyleSheet.create({
-    screenContainer: {
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        paddingHorizontal: 23,
-        paddingTop: 150
-    },
-    searchButton: {
-        marginTop: 15,
-    },
-    sbContainer: {
-        width: "100%",
-    },
-    sliderContainer: {
-        width: "100%",
-        marginTop: 10
-    }
+  screenContainer: {
+    width: "100%",
+    maxHeight: "100%",
+    display: "flex",
+    alignItems: "center",
+    paddingHorizontal: 23,
+    paddingTop: 15,
+  },
+  searchButton: {
+    marginTop: 15,
+  },
+  scrollContainer: {
+    width: "100%",
+    paddingBottom: 15,
+  },
+  sbContainer: {
+    width: "100%",
+  },
+  sliderContainer: {
+    width: "100%",
+    marginTop: 10,
+  },
 });
 
 export default Search;
