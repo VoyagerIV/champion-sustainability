@@ -12,7 +12,7 @@ const Dashboard = ({ navigation }) => {
       <View style={{ flex: 1 }}>
         <ScrollView style={styles.scrollView}>
           <View style={styles.searchButton} onPress={() => { alert("Hi") }}>
-            <SearchBar></SearchBar>
+            <SearchBar style={{ backgroundColor: 'yellow' }} />
           </View>
 
           <Text style={styles.text}>Discover Events</Text>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     padding: 50
   },
   searchButton: {
-    paddingTop: '35%',
+    paddingTop: '10%',
     width: '90%',
     left: 20,
   },

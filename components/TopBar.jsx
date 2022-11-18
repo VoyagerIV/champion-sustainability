@@ -31,7 +31,7 @@ const TopBar = ({ icon, title }) => {
 
 export const TopBarBack = ({ title }) => {
   const navigation = useNavigation();
-  
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -65,9 +65,9 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 56,
-    position: 'absolute',
+    // position: 'absolute',
     top: 0,
-    width:'100%',
+    width: '100%',
   },
   text: {
     color: "#fff",
