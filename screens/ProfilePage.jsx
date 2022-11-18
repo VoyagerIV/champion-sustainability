@@ -7,10 +7,10 @@ import {
 } from "react-native";
 import { Formik } from "formik";
 import CustomButton, { SmallButton } from "../components/CustomButton";
+import { CustomButtonWarning } from "../components/CustomButton";
 
 const styles = StyleSheet.create({
     MainContainer: {
-        // backgroundColor: "red",
         display: "flex",
         flexDirection: "column",
         height: "100%",
@@ -87,11 +87,13 @@ const ProfilePage = ({ route, navigation }) => {
                             <SmallButton style={{ backgroundColor: 'orange', padding: 10, marginTop: 20 }} title='Change Password' />
                         </View>
                         <View style={{ width: "90%", flex: 1 }}>
-                            <CustomButton onPress={() => {
+                            <CustomButtonWarning onPress={() => {
                                 handleSubmit
                                 navigation.navigate('Register')
 
-                            }} title={"Logout"} />
+                            }}
+                                title={"Logout"}
+                            />
                         </View>
                     </View>
                 )}

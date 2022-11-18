@@ -28,6 +28,22 @@ export const SmallButton = ({ title, onPress, style }) => {
   );
 };
 
+export const CustomButtonWarning = ({ title, onPress, disabled, style }) => {
+  return (
+    <TouchableOpacity
+      style={disabled ? [style, styles.button, styles.warning] : [style, styles.button, styles.warning]}
+      onPress={() => {
+        if (!disabled) {
+          onPress();
+        }
+      }}
+      activeOpacity={0.8}
+    >
+      <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
+  );
+}
+
 const styles = StyleSheet.create({
   button: {
     width: "100%",
@@ -49,6 +65,9 @@ const styles = StyleSheet.create({
   },
   disabled: {
     backgroundColor: "#B3CBC4",
+  },
+  warning: {
+    backgroundColor: "orange",
   },
   title: {
     color: "white",
