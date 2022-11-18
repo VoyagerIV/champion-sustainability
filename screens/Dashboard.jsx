@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from "react-native";
 import TopBar from "../components/TopBar";
 import React from 'react';
-import { SearchBar } from "../components/SearchBar";
+import { DisabledSearch } from "../components/SearchBar";
 import Carousel from "../components/Carousal";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -11,8 +11,8 @@ const Dashboard = ({ navigation }) => {
     <>
       <View style={{ flex: 1 }}>
         <ScrollView style={styles.scrollView}>
-          <View style={styles.searchButton} onPress={() => { alert("Hi") }}>
-            <SearchBar></SearchBar>
+          <View style={styles.searchButton}>
+            <DisabledSearch />
           </View>
 
           <Text style={styles.text}>Discover Events</Text>

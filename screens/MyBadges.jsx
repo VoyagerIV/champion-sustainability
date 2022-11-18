@@ -14,10 +14,6 @@ import BadgeWindow from "../components/BadgeWindow";
 const MyBadges = ({}) => {
   return (
     <>
-      <TopBar
-        icon="https://img.icons8.com/ios/512/left.png"
-        title="My Badges">
-      </TopBar>
       <View style={{flex: 1,marginTop:120}}>
         <ScrollView style={styles.scrollView}>
         <BadgeWindow isShared={true}  imgSource={require('../assets/badge.png')} Title="Cleaned a Beach!" Date="11/11/2022 10AM-3:00PM" Caption="You have volunteered to clean the Tasman Sea!"/>
