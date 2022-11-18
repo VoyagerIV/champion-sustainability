@@ -17,7 +17,7 @@ const SearchResults = ({ route, navigation }) => {
       setEvents(
         data["events"].filter(event => {
           // only show upcoming events
-          if (event.status.complete === false) {
+          if (event.status.complete === false && event.title !== "Sanctuary Maintenance" && event.title !== "Clean the Tasman Sea" && event.title !== "Beach Cleanup") {
             return true;
           }
         })
