@@ -35,16 +35,16 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
-        <Stack.Screen
-          options={{
-            header: () => <TopBar title="Welcome Ben!" />,
-          }}
-          name="Profile" component={ProfilePage} />
 
         <Stack.Screen name="Login" component={Login} />
 
         <Stack.Screen name="Register" component={Register} />
 
+        <Stack.Screen
+          options={{
+            header: () => <TopBar title="Welcome Ben!" />,
+          }}
+          name="Profile" component={ProfilePage} />
 
         <Stack.Screen
           options={{
