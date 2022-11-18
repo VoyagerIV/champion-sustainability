@@ -19,8 +19,12 @@ const styles = StyleSheet.create({
   text: {
     flexDirection: "row",
     justifyContent: "space-between"
+  },
 
+  paddingInner: {
+    paddingLeft: 9
   }
+
 })
 
 const MySlider = ({ message, start, end, step }) => {
@@ -43,8 +47,8 @@ const MySlider = ({ message, start, end, step }) => {
         onSlidingComplete={(value) => console.log(value)}
       />
       <View style={{ ...styles.text }}>
-        <Text style={{ paddingLeft: 9 }}>{start}</Text>
-        <Text style={{ paddingRight: 9 }}> {end}</Text>
+        <Text style={styles.paddingInner}>{start}</Text>
+        <Text style={styles.paddingInner}> {end}</Text>
       </View>
     </View>
   );
@@ -68,8 +72,8 @@ export const SliderWithVal = ({ message, start, end, step, value, setValue }) =>
         onValueChange={setValue}
       />
       <View style={{ ...styles.text }}>
-        <Text style={{ paddingLeft: 9 }}>{start}</Text>
-        <Text style={{ paddingRight: 9 }}> {end}</Text>
+        <Text style={styles.paddingInner}>{start}</Text>
+        <Text style={styles.paddingInner}> {end}</Text>
       </View>
     </View>
   );

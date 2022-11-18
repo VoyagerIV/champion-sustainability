@@ -1,18 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Event from "./components/Event";
-import Comment from "./components/Comment";
-import Categories from './components/Categories';
-import { StarRating } from './components/StarRating';
-import SB from './components/SearchBar';
-import Slider from './components/Slider';
-import MyModal from './components/Modal';
+// components
 import TopBar from './components/TopBar';
 import { TopBarBack } from './components/TopBar';
-import Carousal from './components/Carousal';
 
 // screens //
 import Search from "./screens/Search";
@@ -24,9 +16,7 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 import Dashboard from './screens/Dashboard';
 import HostEvent from './screens/HostEvent';
-import Carousel from './components/Carousal'
 import MyBadges from './screens/MyBadges.jsx';
-import BadgeWindow from './components/BadgeWindow';
 import ProfilePage from './screens/ProfilePage';
 const Stack = createNativeStackNavigator();
 
@@ -34,8 +24,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
-
         <Stack.Screen name="Login" component={Login}
           options={{
             headerShown: false
@@ -50,7 +38,7 @@ export default function App() {
 
         <Stack.Screen
           options={{
-            header: () => <TopBar title="Welcome Ben!" />,
+            header: () => <TopBarBack title="Welcome Ben!" />,
           }}
           name="Profile" component={ProfilePage} />
 
@@ -116,22 +104,15 @@ export default function App() {
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
-
-    // <SearchResults />
-
-    // <MyBadges/>
-    // <Carousal/>
-    // <JoinedEvents></JoinedEvents>
-    // <MyBadges></MyBadges>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FBFCF5",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: 16,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: "#FBFCF5",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     fontSize: 16,
+//   },
+// });

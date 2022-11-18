@@ -1,7 +1,6 @@
 // Formik x React Native example
 import React from "react";
 import {
-  Button,
   TextInput,
   View,
   StyleSheet,
@@ -82,7 +81,7 @@ export const DisabledSearch = () => {
       style={styles.SearchWindow}
       onPress={() => navigation.navigate("Search")}
     >
-      <View pointerEvents="none" style={{ display: "flex", justifyContent: "center"}}>
+      <View pointerEvents="none" style={{ display: "flex", justifyContent: "center" }}>
         <TextInput
           placeholder="Search by Location or Event Name"
           editable={false}
@@ -110,5 +109,7 @@ export const NoButtonSB = ({ value, setValue }) => {
     </View>
   );
 };
+
+
 
 export default SB;

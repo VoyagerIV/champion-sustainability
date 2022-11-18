@@ -1,16 +1,12 @@
 import React from "react";
 import {
-    Button,
     TextInput,
     View,
     StyleSheet,
-    TouchableHighlight,
     Text
 } from "react-native";
 import { Formik } from "formik";
 import CustomButton, { SmallButton } from "../components/CustomButton";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const styles = StyleSheet.create({
     MainContainer: {
@@ -25,7 +21,6 @@ const styles = StyleSheet.create({
 
     },
     SearchWindow: {
-        // backgroundColor: "grey",
         borderColor: "green",
         borderWidth: 2,
         borderRadius: 10,

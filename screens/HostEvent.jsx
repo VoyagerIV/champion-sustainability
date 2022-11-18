@@ -1,4 +1,3 @@
-// Formik x React Native example
 import React from "react";
 import {
     Button,
@@ -128,11 +127,6 @@ const HostEvent = ({ navigation }) => {
     const [dateStart, setDateStart] = useState(new Date(1598051730000));
     const [dateEnd, setDateEnd] = useState(new Date(1598051730000));
     const [selectedItems, setSelectedItems] = useState([]);
-
-    // useEffect(() => {
-    //     console.log({ 'dateTopEnd': dateTopEnd, 'dateTopStart': dateTopStart }),
-    //         [dateTopStart, dateTopEnd]
-    // })
 
 
     return (
