@@ -22,6 +22,7 @@ Host Event
 - Host event Forms all output is collected using state and formik and console logged but not actuall used in application
 - Comments don't add new entries but console log ouput
 - Search queries are collected and console logged but no used in filtering
+- Cherry Blossom already exists in My Events Carousel before creating the event 
 
 ## User credentials
 
