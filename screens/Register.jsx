@@ -44,36 +44,39 @@ const Register = ({ route, navigation }) => {
   return (
     <View style={styles.MainContainer}>
       <Formik
-        initialValues={{ name: '', email: '', password: '', confirmPassword: '' }}
-        onSubmit={values => console.log(values)}
+        initialValues={{
+          name: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        }}
+        onSubmit={(values) => console.log(values)}
         style={{ ...styles.MainContainer, ...{ backgroundColor: "blue" } }}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
-          <View
-            style={styles.MainContainer}
-          >
+          <View style={styles.MainContainer}>
             <View style={{ ...styles.MainContainer, flex: 11 }}>
               <Text style={styles.label}>Name</Text>
 
               <TextInput
-                onChangeText={handleChange('name')}
-                onBlur={handleBlur('name')}
+                onChangeText={handleChange("name")}
+                onBlur={handleBlur("name")}
                 value={values.name}
                 style={styles.SearchWindow}
               />
               <Text style={styles.label}>Email</Text>
 
               <TextInput
-                onChangeText={handleChange('email')}
-                onBlur={handleBlur('email')}
+                onChangeText={handleChange("email")}
+                onBlur={handleBlur("email")}
                 value={values.email}
                 style={styles.SearchWindow}
               />
               <Text style={styles.label}>Password</Text>
 
               <TextInput
-                onChangeText={handleChange('password')}
-                onBlur={handleBlur('password')}
+                onChangeText={handleChange("password")}
+                onBlur={handleBlur("password")}
                 value={values.password}
                 style={styles.SearchWindow}
                 secureTextEntry={true}
@@ -81,20 +84,27 @@ const Register = ({ route, navigation }) => {
               <Text style={styles.label}>Confirm Password</Text>
 
               <TextInput
-                onChangeText={handleChange('confirmPassword')}
-                onBlur={handleBlur('confirmPassword')}
+                onChangeText={handleChange("confirmPassword")}
+                onBlur={handleBlur("confirmPassword")}
                 value={values.confirmPassword}
                 style={styles.SearchWindow}
                 secureTextEntry={true}
               />
             </View>
+            <Text
+              style={{ fontSize: 16, marginBottom: 5, color: "#00CA90" }}
+              onPress={() => navigation.navigate("Login")}
+            >
+              Already have an account? Log in
+            </Text>
             <View style={{ width: "90%", flex: 1 }}>
-              <Text style={{ fontSize: 16 }} onPress={() => navigation.navigate("Login")}>Already have an account? Log in</Text>
-              <CustomButton onPress={() => {
-                handleSubmit
-                navigation.navigate('DashBoard')
-
-              }} title={"Register"} />
+              <CustomButton
+                onPress={() => {
+                  handleSubmit;
+                  navigation.navigate("DashBoard");
+                }}
+                title={"Register"}
+              />
             </View>
           </View>
         )}

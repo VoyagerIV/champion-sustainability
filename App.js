@@ -34,16 +34,19 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
-        <Stack.Screen name="Login" component={Login}
+        <Stack.Screen
+          name="Register"
+          component={Register}
           options={{
-            headerShown: false
+            headerShown: false,
           }}
         />
 
-        <Stack.Screen name="Register" component={Register}
+        <Stack.Screen
+          name="Login"
+          component={Login}
           options={{
-            headerShown: false
+            headerShown: false,
           }}
         />
 
@@ -51,7 +54,9 @@ export default function App() {
           options={{
             header: () => <TopBar title="Welcome Ben!" />,
           }}
-          name="Profile" component={ProfilePage} />
+          name="Profile"
+          component={ProfilePage}
+        />
 
         <Stack.Screen
           options={{
