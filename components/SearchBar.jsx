@@ -82,10 +82,13 @@ export const DisabledSearch = () => {
       style={styles.SearchWindow}
       onPress={() => navigation.navigate("Search")}
     >
-      <TextInput
-        placeholder="Search by Location or Event Name"
-        editable={false}
-      />
+      <View pointerEvents="none" style={{ display: "flex", justifyContent: "center"}}>
+        <TextInput
+          placeholder="Search by Location or Event Name"
+          editable={false}
+          onFocus={() => navigation.navigate("Search")}
+        />
+      </View>
       <TouchableHighlight>
         <IconComponentProvider IconComponent={MaterialCommunityIcons}>
           <SearchIcon />

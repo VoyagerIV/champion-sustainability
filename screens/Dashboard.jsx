@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     padding: 50
   },
   searchButton: {
-    paddingTop: '35%',
+    paddingTop: '10%',
     width: '90%',
     left: 20,
   },
