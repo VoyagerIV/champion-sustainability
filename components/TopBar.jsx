@@ -5,13 +5,17 @@ import badge from "../assets/badge.png";
 import { useNavigation } from "@react-navigation/native";
 
 const TopBar = ({ icon, title }) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <TouchableOpacity activeOpacity={0.5}>
+      <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          navigation.navigate("Badges");
+        }}
+      >
         <Image
-          source={{
-            uri: `${icon}`,
-          }}
+          source={require("../assets/badge.png")}
           style={styles.buttonImageIconStyle}
         />
       </TouchableOpacity>

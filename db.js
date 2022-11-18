@@ -300,7 +300,7 @@ let data = {
       image:
         "https://www.aussieark.org.au/wp-content/uploads/2018/11/0V2A0510-scaled.jpg",
       title: "Sanctuary Maintenance",
-      organiser: "AWC",
+      organiser: "Ben Marcus",
       date: "17/11/2022",
       time: "3:00 PM",
       location: "Sydney NSW 2000",
@@ -329,7 +329,7 @@ let data = {
       image:
         "https://www.realestate.com.au/blog/images/2000x1500-fit,progressive/2018/05/03161812/Charry-blossoms-hero.jpg",
       title: "Cherry Blossom ",
-      organiser: "Susan Smith",
+      organiser: "Ben Marcus",
       date: "13/4/2022",
       time: "3:00 PM",
       location: "Sydney NSW 2000",

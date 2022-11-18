@@ -33,21 +33,23 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Login" component={Login} />
+
         <Stack.Screen
-          name="Register"
-          component={Register}
-        />
-        <Stack.Screen
-          name="Login"
-          component={Login}
+          options={{
+            header: () => <TopBar title="Welcome Ben!" />,
+          }}
+          name="DashBoard"
+          component={Dashboard}
         />
 
         <Stack.Screen
           options={{
-            header: () => <TopBarBack title="DashBoard" />,
+            header: () => <TopBarBack title="My Badges" />,
           }}
-          name="DashBoard"
-          component={Dashboard}
+          name="Badges"
+          component={MyBadges}
         />
 
         <Stack.Screen
