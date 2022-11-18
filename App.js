@@ -24,15 +24,23 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+<<<<<<< HEAD
         <Stack.Screen name="Login" component={Login}
+=======
+        <Stack.Screen
+          name="Register"
+          component={Register}
+>>>>>>> 5ec8409895048d03dda3bf270ac2df5b85a3768e
           options={{
-            headerShown: false
+            headerShown: false,
           }}
         />
 
-        <Stack.Screen name="Register" component={Register}
+        <Stack.Screen
+          name="Login"
+          component={Login}
           options={{
-            headerShown: false
+            headerShown: false,
           }}
         />
 
@@ -40,7 +48,9 @@ export default function App() {
           options={{
             header: () => <TopBarBack title="Welcome Ben!" />,
           }}
-          name="Profile" component={ProfilePage} />
+          name="Profile"
+          component={ProfilePage}
+        />
 
         <Stack.Screen
           options={{

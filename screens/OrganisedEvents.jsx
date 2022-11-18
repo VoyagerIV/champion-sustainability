@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     paddingHorizontal: 23,
-    paddingTop: 150,
+    paddingTop: 15,
   },
   list: {
     width: "100%",
