@@ -27,15 +27,24 @@ import HostEvent from './screens/HostEvent';
 import Carousel from './components/Carousal'
 import MyBadges from './screens/MyBadges.jsx';
 import BadgeWindow from './components/BadgeWindow';
+import ProfilePage from './screens/ProfilePage';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+
         <Stack.Screen
-          name="Register" component={Register} />
+          options={{
+            header: () => <TopBar title="Welcome Ben!" />,
+          }}
+          name="Profile" component={ProfilePage} />
+
         <Stack.Screen name="Login" component={Login} />
+
+        <Stack.Screen name="Register" component={Register} />
+
 
         <Stack.Screen
           options={{
