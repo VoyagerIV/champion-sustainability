@@ -26,7 +26,12 @@ const Dashboard = ({ navigation }) => {
               },
             ]}
           />
-          <Text style={styles.text}>Joined Events</Text>
+          <Text
+            style={styles.text}
+            onPress={() => navigation.navigate("JoinedEvents")}
+          >
+            Joined Events
+          </Text>
           <Carousel
             data={[
               {
@@ -43,7 +48,12 @@ const Dashboard = ({ navigation }) => {
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
-            <Text style={styles.text}>My Events</Text>
+            <Text
+              style={styles.text}
+              onPress={() => navigation.navigate("OrganisedEvents")}
+            >
+              My Events
+            </Text>
             <TouchableOpacity
               style={styles.btn}
               onPress={() => {

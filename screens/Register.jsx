@@ -89,6 +89,7 @@ const Register = ({ route, navigation }) => {
               />
             </View>
             <View style={{ width: "90%", flex: 1 }}>
+              <Text style={{ fontSize: 16 }} onPress={() => navigation.navigate("Login")}>Already have an account? Log in</Text>
               <CustomButton onPress={() => {
                 handleSubmit
                 navigation.navigate('DashBoard')
