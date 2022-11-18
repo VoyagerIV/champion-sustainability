@@ -9,7 +9,7 @@
 ## None Interactable Buttons
 
 Badges Screen
-- Share Button not interactable
+- Share Button
 
 Profile Screen
 - Change Password
