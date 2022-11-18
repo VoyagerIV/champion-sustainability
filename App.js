@@ -116,13 +116,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#FBFCF5",
-//     alignItems: "center",
-//     justifyContent: "center",
-//     fontSize: 16,
-//   },
-// });

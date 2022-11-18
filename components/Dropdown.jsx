@@ -9,6 +9,7 @@ const items = [
     { id: 4, name: 'Animal Care' },
     { id: 5, name: 'Weed Removal' },
     { id: 6, name: 'Ocean Cleaning' },
+    { id: 7, name: 'Gardening' },
 ];
 
 const DropDown = ({ selectedItems, setSelectedItems }) => {

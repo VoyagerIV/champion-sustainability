@@ -62,6 +62,19 @@ const Dashboard = ({ navigation }) => {
               <Text style={styles.title}>+ HOST EVENT</Text>
             </TouchableOpacity>
           </View>
+          <Carousel
+            data={[
+              {
+                t: "Cherry Blossom Planting",
+                i: require("../assets/blossom.jpeg"),
+              },
+              {
+                t: "Weed Removal",
+                i: require("../assets/weed.jpeg"),
+              },
+            ]}
+          />
+
         </ScrollView>
       </View>
     </>
