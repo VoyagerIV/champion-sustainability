@@ -18,6 +18,9 @@ import { useState } from "react";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { useEffect } from "react";
 import DropDown from "../components/Dropdown";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 const styles = StyleSheet.create({
     MainContainer: {
@@ -120,7 +123,7 @@ const DatePicker = ({ label, date, setDate }) => {
     );
 }
 
-const HostEvent = () => {
+const HostEvent = ({ navigation }) => {
     const [slider, setSlider] = useState(0)
     const [dateStart, setDateStart] = useState(new Date(1598051730000));
     const [dateEnd, setDateEnd] = useState(new Date(1598051730000));
@@ -172,7 +175,10 @@ const HostEvent = () => {
 
                             </View>
                             <View style={{ width: "90%", flex: 1 }}>
-                                <CustomButton onPress={handleSubmit} title={"HostEvent"} />
+                                <CustomButton onPress={() => {
+                                    handleSubmit
+                                    navigation.navigate('DashBoard')
+                                }} title={"HostEvent"} />
                             </View>
                         </View>
                     )}

@@ -93,7 +93,7 @@ const Register = ({ route, navigation }) => {
             <View style={{ width: "90%", flex: 1 }}>
               <CustomButton onPress={() => {
                 handleSubmit
-                navigation.navigate('Search')
+                navigation.navigate('DashBoard')
 
               }} title={"Register"} />
             </View>
