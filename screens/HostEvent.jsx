@@ -15,10 +15,8 @@ import { SmallButton } from "../components/CustomButton";
 import { SliderWithVal } from "../components/Slider";
 import { useState } from "react";
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { useEffect } from "react";
 import DropDown from "../components/Dropdown";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { SmallButton } from "../components/CustomButton";
 
 
 const styles = StyleSheet.create({
@@ -27,7 +25,8 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        width: "95%",
+        // marginHorizontal: 20,
+        width: '100%',
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 50,
@@ -36,7 +35,6 @@ const styles = StyleSheet.create({
 
     },
     SearchWindow: {
-        // backgroundColor: "grey",
         borderColor: "green",
         borderWidth: 2,
         borderRadius: 10,
@@ -50,7 +48,10 @@ const styles = StyleSheet.create({
     label: {
         alignSelf: "flex-start",
         marginLeft: "10%"
-    }
+    },
+    scrollView: {
+        marginHorizontal: 20,
+    },
 });
 
 const Sect = ({ label, onChangeText, onBlur, value, height }) => {
@@ -130,7 +131,7 @@ const HostEvent = ({ navigation }) => {
 
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.scrollView}>
             <View style={styles.MainContainer}>
                 <Formik
                     initialValues={{ title: '', location: '', description: '' }}
@@ -167,8 +168,13 @@ const HostEvent = ({ navigation }) => {
                                     height={200}
                                 />
 
+                                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                    <SmallButton title="Choose Image" style={{ backgroundColor: '#00CA90', paddingHorizontal: 25 }} />
+                                    <Text>No Image Selected</Text>
+                                </View>
+
                             </View>
-                            <View style={{ width: "90%", flex: 1 }}>
+                            <View style={{ flex: 1, width: '100%', justifyContent: 'center', flexDirection: 'row' }}>
                                 <CustomButton onPress={() => {
                                     handleSubmit
                                     navigation.navigate('DashBoard')
