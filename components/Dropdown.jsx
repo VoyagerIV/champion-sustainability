@@ -57,18 +57,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-        padding: 10,
+        paddingHorizontal: 10,
         width: '100%',
-        justifyContent: 'center',
-
+        paddingTop: 30,
+        borderRadius: 10,
     },
     titleText: {
-        padding: 8,
         fontSize: 16,
         textAlign: 'center',
         fontWeight: 'bold',
-    },
-    headingText: {
-        padding: 8,
-    },
+    }
 });

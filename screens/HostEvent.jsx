@@ -61,7 +61,7 @@ const Sect = ({ label, onChangeText, onBlur, value, height }) => {
             <Text style={styles.label}>{label}</Text>
             <TextInput
                 onChangeText={onChangeText}
-                onBlur={onBlur}
+                // onBlur={onBlur}
                 value={value}
                 style={{ ...styles.SearchWindow, 'height': height }}
             />
@@ -137,7 +137,7 @@ const HostEvent = ({ navigation }) => {
                     onSubmit={values => console.log(values)}
                     style={{ ...styles.MainContainer, ...{ backgroundColor: "blue" } }}
                 >
-                    {({ handleChange, handleBlur, handleSubmit, values }) => (
+                    {({ handleChange, handleSubmit, values }) => (
                         <View
                             style={styles.MainContainer}
                         >
