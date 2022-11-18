@@ -6,6 +6,7 @@ import { LogBox } from 'react-native';
 // components
 import TopBar from './components/TopBar';
 import { TopBarBack } from './components/TopBar';
+import { TopBarDashboard } from './components/TopBar';
 
 // screens //
 import Search from "./screens/Search";
@@ -85,7 +86,7 @@ export default function App() {
         />
         <Stack.Screen
           options={{
-            header: () => <TopBarBack title="Events" />,
+            header: () => <TopBarDashboard title="Events" />,
           }}
           name="SearchResults"
           component={SearchResults}
